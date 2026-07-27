@@ -1,0 +1,1082 @@
+{
+  "arms": {
+    "alpha_0960": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.9609375,
+        "correct": 246,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.9609375,
+              "correct": 246,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.9609375,
+              "correct": 246,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "fpma_default": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.953125,
+        "correct": 244,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 244,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 244,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "normal_a8": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.94921875,
+        "correct": 243,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.94921875,
+              "correct": 243,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.94921875,
+              "correct": 243,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "official": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.95703125,
+        "correct": 245,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.95703125,
+              "correct": 245,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.95703125,
+              "correct": 245,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.953125,
+        "correct": 244,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 244,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 244,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 254,
+        "total": 256,
+        "valid": 256,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.96484375,
+        "correct": 247,
+        "total": 256
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.96484375,
+              "correct": 247,
+              "total": 256
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.96484375,
+              "correct": 247,
+              "total": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "alpha_0960_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "alpha_0960",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "alpha_0960",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.9609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 93,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1052,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 2,
+              "candidate_loss_flip_keys": [],
+              "candidate_loss_flips": 0,
+              "concordant_both_correct": 244,
+              "concordant_both_incorrect": 10,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 2,
+                "method": "exact_binomial",
+                "p_value": 0.5
+              },
+              "paired_accuracy_delta": 0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.0,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.01953125
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "alpha_0960_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "alpha_0960",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "alpha_0960",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.01171875,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.94921875,
+              "candidate_accuracy": 0.9609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 963,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 988,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 989,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 3,
+              "candidate_loss_flip_keys": [],
+              "candidate_loss_flips": 0,
+              "concordant_both_correct": 243,
+              "concordant_both_incorrect": 10,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 0.25
+              },
+              "paired_accuracy_delta": 0.01171875,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.0,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.02734375
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "fpma_default_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "fpma_default",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.00390625,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.94921875,
+              "candidate_accuracy": 0.953125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 963,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 988,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 989,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 3,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 93,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1052,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 241,
+              "concordant_both_incorrect": 10,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 5,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.01171875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0234375
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "normal_a8_vs_official": {
+      "baseline": "official",
+      "candidate": "normal_a8",
+      "format_gate": {
+        "baseline": {
+          "arm": "official",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.95703125,
+              "candidate_accuracy": 0.94921875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 635,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 689,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 2,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 584,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 963,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 988,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 989,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 4,
+              "concordant_both_correct": 241,
+              "concordant_both_incorrect": 9,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 6,
+                "method": "exact_binomial",
+                "p_value": 0.6875
+              },
+              "paired_accuracy_delta": -0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.02734375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.01171875
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "selector_alpha1",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "selector_alpha1",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.953125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 93,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 584,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1052,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 3,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 598,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 635,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 938,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 3,
+              "concordant_both_correct": 241,
+              "concordant_both_incorrect": 9,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 6,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.01953125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.01953125
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "selector_alpha1",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "selector_alpha1",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.00390625,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.94921875,
+              "candidate_accuracy": 0.953125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 584,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 963,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 988,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 989,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 4,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 598,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 635,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 938,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 3,
+              "concordant_both_correct": 240,
+              "concordant_both_incorrect": 9,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 7,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.015625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0234375
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "ulp_v1",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "ulp_v1",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.96484375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 93,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 584,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1052,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 3,
+              "candidate_loss_flip_keys": [],
+              "candidate_loss_flips": 0,
+              "concordant_both_correct": 244,
+              "concordant_both_incorrect": 9,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 0.25
+              },
+              "paired_accuracy_delta": 0.01171875,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.0,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.02734375
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "ulp_v1",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "ulp_v1",
+          "gate_passed": true,
+          "minimum_valid": 254,
+          "total": 256,
+          "valid": 256,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 254
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.015625,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.94921875,
+              "candidate_accuracy": 0.96484375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 584,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 963,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 988,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 989,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 4,
+              "candidate_loss_flip_keys": [],
+              "candidate_loss_flips": 0,
+              "concordant_both_correct": 243,
+              "concordant_both_incorrect": 9,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 4,
+                "method": "exact_binomial",
+                "p_value": 0.125
+              },
+              "paired_accuracy_delta": 0.015625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.00390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.03125
+              },
+              "samples": 256
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    }
+  },
+  "format": "tensorbridge_nvfp4_lm_stage_analysis",
+  "inputs": {
+    "alpha_0960": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/alpha_0960_420078.json",
+      "result_sha256": "660305f219779d8f8a3376e983cd10f553f03c0860b2c742c359d40511499a6a",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/alpha_0960_420078_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "27bad2a8a945128d5bad53c09c058ee3bd1215c8f78129a6af8ed200f26cd98e"
+        }
+      }
+    },
+    "fpma_default": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/fpma_default_420081.json",
+      "result_sha256": "64ad683458ae7d759bd59a2c4fb2ad6e9cbeeddf6e96884d17c02c907103205c",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/fpma_default_420081_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "56fd6d61d3301118d91424031174886c676a027efdfa745703b226cac5b33ef8"
+        }
+      }
+    },
+    "normal_a8": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/normal_a8_420080.json",
+      "result_sha256": "e782b6657de594bfbf060ff36a0f00ed8ee67afbf73981bad2fb33cc3f9b615f",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/normal_a8_420080_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "046b5e8953c7c95640963871f9fd70813bf51b381b65876661e688d106a92edb"
+        }
+      }
+    },
+    "official": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/official_420079.json",
+      "result_sha256": "813d45eb782910963df7551abc3c1ada5598366d91dd4b4bee8061cb7bdc8b35",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/official_420079_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "580110083f5b0d07a0a79ad73d4be87617ca97091bf50ff1ec370af60357bacf"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/selector_alpha1_420082.json",
+      "result_sha256": "e9906ac85ff306c1634279502ef70e3aaaf4c2255e7a36d303b150ed714419e7",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/selector_alpha1_420082_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "ccdeec02a6da90be44898991911c3478900216143a5ff397a84a31f349012ed3"
+        }
+      }
+    },
+    "ulp_v1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/ulp_v1_420083.json",
+      "result_sha256": "211af8cca44008ffe57cfd3f81b09cc2bafe6979bcf1d24789ccc67bf781dec3",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/420078/stage3_generation/ulp_v1_420083_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "6a38e6fce9abf275fdf4eff7bffd8a19305938d71f7c6f67c9131aa6685bb869"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "leaf_tasks": [
+      "tensorbridge_gsm8k_relative_smoke"
+    ],
+    "mcnemar": {
+      "alternative": "two-sided",
+      "method": "exact_binomial"
+    },
+    "paired_confidence_interval": {
+      "confidence_level": 0.95,
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "mmlu_pro_resampling_unit": "document_within_fixed_category",
+      "resamples": 10000,
+      "seed": 20260718
+    },
+    "pairing_key": [
+      "leaf_task",
+      "doc_id",
+      "filter"
+    ],
+    "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/protocols/accuracy_expand_v2.json",
+    "requested_tasks": [
+      "tensorbridge_gsm8k_relative_smoke"
+    ],
+    "screening_margin_vs_normal_a8": -0.05,
+    "sha256": "77333f869b16d8f29c49f0338594adbc92ae788d02dc6759434d444a737b7b3d",
+    "suite": "stage3_generation",
+    "supporting_files": {
+      "sample_manifest": {
+        "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/samples/gsm8k_test_stage3_sha256_rank_256.json",
+        "sha256": "37077471979c08a0b71ecdb384c0d4b5c7d9e37f59225ba724bb0ba3693915e4"
+      }
+    }
+  },
+  "sample_pairing": {
+    "cross_arm_checkpoint_match": true,
+    "cross_arm_identity_sha256": "c40c65277f1322e6725607e72226a617ffcc037929f805d6e3fb1ad72e73d494",
+    "cross_arm_module_paths_match": true,
+    "cross_arm_runtime_versions_match": true,
+    "cross_arm_sample_match": true,
+    "cross_arm_task_config_match_after_callable_address_normalization": true,
+    "pairs": 256,
+    "source": {
+      "policy": "all_six_arms_exact_source_identity",
+      "prospective_stage_exact_match": true
+    }
+  },
+  "schema_version": 1,
+  "scientific_decision": {
+    "all_screening_checks_passed": true,
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "no_result_dependent_arm_dropping_authorized": true,
+    "post_confirmation_sensitivity": false,
+    "prospective_stage": true,
+    "screening_checks_vs_normal_a8": {
+      "alpha_0960": true,
+      "fpma_default": true,
+      "selector_alpha1": true,
+      "ulp_v1": true
+    },
+    "suite": "stage3_generation"
+  },
+  "status": "analysis_completed"
+}

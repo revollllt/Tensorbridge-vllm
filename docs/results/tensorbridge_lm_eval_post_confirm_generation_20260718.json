@@ -1,0 +1,1015 @@
+{
+  "arms": {
+    "alpha_0960": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.9609375,
+        "correct": 123,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.9609375,
+              "correct": 123,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.9609375,
+              "correct": 123,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "fpma_default": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.96875,
+        "correct": 124,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.96875,
+              "correct": 124,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.96875,
+              "correct": 124,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "normal_a8": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.953125,
+        "correct": 122,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 122,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 122,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "official": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.953125,
+        "correct": 122,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 122,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.953125,
+              "correct": 122,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.9375,
+        "correct": 120,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.9375,
+              "correct": 120,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.9375,
+              "correct": 120,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1": {
+      "format": {
+        "gate_passed": true,
+        "minimum_valid": 127,
+        "total": 128,
+        "valid": 128,
+        "valid_rate": 1.0
+      },
+      "lm_eval_raw_exact_match": {
+        "accuracy": 0.9453125,
+        "correct": 121,
+        "total": 128
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "analysis_metrics": {
+            "exact_match": {
+              "accuracy": 0.9453125,
+              "correct": 121,
+              "total": 128
+            }
+          },
+          "full_evaluation_metrics": {
+            "exact_match": {
+              "accuracy": 0.9453125,
+              "correct": 121,
+              "total": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "alpha_0960_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "alpha_0960",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "alpha_0960",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.96875,
+              "candidate_accuracy": 0.9609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 298,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 510,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 122,
+              "concordant_both_incorrect": 3,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": -0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.015625
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "alpha_0960_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "alpha_0960",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "alpha_0960",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.0078125,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.9609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 298,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 494,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 2,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 1,
+              "concordant_both_correct": 121,
+              "concordant_both_incorrect": 4,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.015625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0390625
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "fpma_default_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "fpma_default",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.015625,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.96875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 494,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 510,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 2,
+              "candidate_loss_flip_keys": [],
+              "candidate_loss_flips": 0,
+              "concordant_both_correct": 122,
+              "concordant_both_incorrect": 4,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 2,
+                "method": "exact_binomial",
+                "p_value": 0.5
+              },
+              "paired_accuracy_delta": 0.015625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.0,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0390625
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "normal_a8_vs_official": {
+      "baseline": "official",
+      "candidate": "normal_a8",
+      "format_gate": {
+        "baseline": {
+          "arm": "official",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.953125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 1110,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 298,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 1,
+              "concordant_both_correct": 121,
+              "concordant_both_incorrect": 5,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 2,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0234375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0234375
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "selector_alpha1",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "selector_alpha1",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.96875,
+              "candidate_accuracy": 0.9375,
+              "candidate_gain_flip_keys": [],
+              "candidate_gain_flips": 0,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 494,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 510,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1110,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 4,
+              "concordant_both_correct": 120,
+              "concordant_both_incorrect": 4,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 4,
+                "method": "exact_binomial",
+                "p_value": 0.125
+              },
+              "paired_accuracy_delta": -0.03125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": -0.0078125
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "selector_alpha1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "selector_alpha1",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "selector_alpha1",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": -0.015625,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.9375,
+              "candidate_gain_flip_keys": [],
+              "candidate_gain_flips": 0,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 1110,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 120,
+              "concordant_both_incorrect": 6,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 2,
+                "method": "exact_binomial",
+                "p_value": 0.5
+              },
+              "paired_accuracy_delta": -0.015625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "ulp_v1",
+      "format_gate": {
+        "baseline": {
+          "arm": "fpma_default",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "ulp_v1",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.96875,
+              "candidate_accuracy": 0.9453125,
+              "candidate_gain_flip_keys": [],
+              "candidate_gain_flips": 0,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 494,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 510,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                },
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 3,
+              "concordant_both_correct": 121,
+              "concordant_both_incorrect": 4,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 0.25
+              },
+              "paired_accuracy_delta": -0.0234375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0546875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    },
+    "ulp_v1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "ulp_v1",
+      "format_gate": {
+        "baseline": {
+          "arm": "normal_a8",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "both_passed": true,
+        "candidate": {
+          "arm": "ulp_v1",
+          "gate_passed": true,
+          "minimum_valid": 127,
+          "total": 128,
+          "valid": 128,
+          "valid_rate": 1.0
+        },
+        "minimum_valid": 127
+      },
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": -0.0078125,
+            "unit": "tensorbridge_gsm8k_relative_smoke"
+          }
+        ]
+      },
+      "tasks": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "metrics": {
+            "exact_match": {
+              "baseline_accuracy": 0.953125,
+              "candidate_accuracy": 0.9453125,
+              "candidate_gain_flip_keys": [],
+              "candidate_gain_flips": 0,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 873,
+                  "filter": "final-answer",
+                  "leaf_task": "tensorbridge_gsm8k_relative_smoke"
+                }
+              ],
+              "candidate_loss_flips": 1,
+              "concordant_both_correct": 121,
+              "concordant_both_incorrect": 6,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 1,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": -0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0234375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0
+              },
+              "samples": 128
+            }
+          },
+          "primary_metric": "exact_match"
+        }
+      }
+    }
+  },
+  "format": "tensorbridge_nvfp4_lm_stage_analysis",
+  "inputs": {
+    "alpha_0960": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419473/confirm_generation/alpha_0960_419473.json",
+      "result_sha256": "bae4b439128e3fe968bef6bcf116a12e4ba68c163e55e8d2cd87ff35b0fa633a",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419473/confirm_generation/alpha_0960_419473_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "57bc0a95a70d1b4e2fd3390202d54f2ae5e5deccaa64d18e74d2c1827fc16f36"
+        }
+      }
+    },
+    "fpma_default": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/fpma_default_417985.json",
+      "result_sha256": "473c67754b81d20fc346d9eaf888de8c1f915fca013bac5d09e925a9dcc6fc97",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/fpma_default_417985_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "65e75e77090bba2c77c942b7cc5faf2f5ad7f771f198102c450195025c82b935"
+        }
+      }
+    },
+    "normal_a8": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/normal_a8_417984.json",
+      "result_sha256": "56a60ee82a7adb43ef7ebb7579230654d70e01446fb39ea1d9011e82cfb7a40d",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/normal_a8_417984_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "f0113f6a3f41de21d521ef78cab5d4d062ace8cf932df7cdee50672f7637b67d"
+        }
+      }
+    },
+    "official": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417973/confirm_generation/official_417973.json",
+      "result_sha256": "dc5d10ea1b7efcb53399760af97fd8892326ff005a14ca3cffec1eae4029e6d9",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417973/confirm_generation/official_417973_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "f6cabdd35838086c10341290f7af2c2f6b898dcfa900916d41d5bd5cb2fbe38f"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419473/confirm_generation/selector_alpha1_419475.json",
+      "result_sha256": "c797fa78919743abc7e4c9bb38240ac93170f351a73d277b257a1641978a69f8",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419473/confirm_generation/selector_alpha1_419475_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "123293d276e8a6bff7a2b99fcc6f7945e3bd13667a7996f14e8cb417e3a10054"
+        }
+      }
+    },
+    "ulp_v1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/ulp_v1_417983.json",
+      "result_sha256": "75c71797fcc23d10e009ff4129182b54bf6b86ab9c3a1ad93cc00b6c64cf8248",
+      "sample_artifacts": {
+        "tensorbridge_gsm8k_relative_smoke": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417983/confirm_generation/ulp_v1_417983_samples/tensorbridge_gsm8k_relative_smoke.jsonl",
+          "sha256": "6fdd37976b2aa782f69f65a25af4bb745d38cad4a93b9de4ae08ba94d2105577"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "leaf_tasks": [
+      "tensorbridge_gsm8k_relative_smoke"
+    ],
+    "mcnemar": {
+      "alternative": "two-sided",
+      "method": "exact_binomial"
+    },
+    "paired_confidence_interval": {
+      "confidence_level": 0.95,
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "mmlu_pro_resampling_unit": "document_within_fixed_category",
+      "resamples": 10000,
+      "seed": 20260718
+    },
+    "pairing_key": [
+      "leaf_task",
+      "doc_id",
+      "filter"
+    ],
+    "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/protocols/accuracy_expand_v2.json",
+    "requested_tasks": [
+      "tensorbridge_gsm8k_relative_smoke"
+    ],
+    "screening_margin_vs_normal_a8": -0.05,
+    "sha256": "77333f869b16d8f29c49f0338594adbc92ae788d02dc6759434d444a737b7b3d",
+    "suite": "confirm_generation",
+    "supporting_files": {
+      "confirmation_v1_protocol": {
+        "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/protocols/accuracy_confirm_v1.json",
+        "sha256": "3a3ab3a617143b29eb94af5a75316b74f44d66841d2970a85206c4ac091350a2"
+      },
+      "sample_manifest": {
+        "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/samples/gsm8k_test_sha256_rank_128.json",
+        "sha256": "37bca36cf4be344ed07209b2caa76688969ac20664f3ad4e263409296455f2df"
+      }
+    }
+  },
+  "sample_pairing": {
+    "cross_arm_checkpoint_match": true,
+    "cross_arm_identity_sha256": "5bf6902d0cb96c9fadd690d95547964b606dd7e802bcfae138525c6aa414ea41",
+    "cross_arm_module_paths_match": true,
+    "cross_arm_runtime_versions_match": true,
+    "cross_arm_sample_match": true,
+    "cross_arm_task_config_match_after_callable_address_normalization": true,
+    "pairs": 128,
+    "source": {
+      "cross_cohort_status_sha256_may_differ": true,
+      "cross_cohort_tree_head_tracked_diff_and_vllm_match": true,
+      "new_arm_exact_match": true,
+      "policy": "post_confirmation_two_cohort_source_identity",
+      "reused_v1_arms": [
+        "official",
+        "normal_a8",
+        "fpma_default",
+        "ulp_v1"
+      ],
+      "reused_v1_status_sha256_may_differ": true,
+      "reused_v1_tree_head_tracked_diff_and_vllm_match": true
+    }
+  },
+  "schema_version": 1,
+  "scientific_decision": {
+    "all_screening_checks_passed": true,
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "no_result_dependent_arm_dropping_authorized": true,
+    "post_confirmation_sensitivity": true,
+    "prospective_stage": false,
+    "screening_checks_vs_normal_a8": {
+      "alpha_0960": true,
+      "fpma_default": true,
+      "selector_alpha1": true,
+      "ulp_v1": true
+    },
+    "suite": "confirm_generation"
+  },
+  "status": "analysis_completed"
+}

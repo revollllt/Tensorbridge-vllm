@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-22",
+  "experiment": "tensorbridge_tp_full_decode_only_cudagraph",
+  "production_contract": {
+    "checkpoint": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4",
+    "fpma_alpha": 0.961,
+    "snc_enabled": true,
+    "lm_head_backend": "marlin_w4a16",
+    "lm_head_activation_dtype": "bfloat16",
+    "cudagraph_mode": "FULL_DECODE_ONLY",
+    "compilation_mode": "NONE",
+    "capture_sizes": [1],
+    "block_start": 26,
+    "output_tokens": 8,
+    "warmup_runs": 2,
+    "measured_runs": 50
+  },
+  "probe_selection": {
+    "job_id": "429997",
+    "candidates": 32,
+    "selected_block_start": 26,
+    "selected_min_chosen_logprob": -0.435134440660477,
+    "selected_min_chosen_probability": 0.647,
+    "result_sha256": "5f86805bf46c5d53fe0a0be679b2a25817808ea71e53195f746602619a0b867a",
+    "scope": "execution-mode probe selection only; not model-accuracy selection"
+  },
+  "gpu_pytest": {
+    "job_id": "430100",
+    "node": "ACD1-6",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "passed": 132,
+    "warnings": 16
+  },
+  "tp1": {
+    "job_id": "430015",
+    "node": "ACD1-31",
+    "driver": "595.58.03",
+    "resources": {"gpus": 1, "cpus": 8, "memory_gib": 80},
+    "status": "passed",
+    "eager_result": "benchmarks/results/ppl/wikitext2_tensorbridge_fdo_tp1_eager_430015.json",
+    "eager_sha256": "47e28f91eead1d208166bf74c981005b960927a9cf4c498222c63086e04c2535",
+    "graph_result": "benchmarks/results/ppl/wikitext2_tensorbridge_fdo_tp1_graph_430015.json",
+    "graph_sha256": "0b3feadba26ab625b6735fe1bfcd1d7658560d6355508dde5b8ae902a1e867dc",
+    "decode_delta_mean_nll": -0.001334796982617792,
+    "decode_delta_nll_ci90": [-0.0028132853914457244, 0.00014369142621014058],
+    "decode_chosen_probability_ratio": 1.0013356882206066,
+    "noise_upper90": {
+      "prompt": 1.2482202744357669,
+      "prefill_position0": 1.2172116296209936,
+      "decode_scalar": 1.200576519472029,
+      "decode_vector_rms": 1.0401578608016226
+    },
+    "mode_effect_p_values": {
+      "rms": 0.3063693630636936,
+      "max_t": 0.0537946205379462
+    },
+    "median_generation_seconds": {
+      "eager": 0.661972647998482,
+      "graph": 0.201489734463394,
+      "speedup": 3.285
+    }
+  },
+  "tp2": {
+    "job_id": "430103",
+    "node": "ACD1-6",
+    "driver": "570.86.10",
+    "resources": {"gpus": 2, "cpus": 16, "memory_gib": 160},
+    "worker_thread_limit": 8,
+    "status": "passed",
+    "allreduce_rms_fusion_disabled": true,
+    "eager_result": "benchmarks/results/ppl/wikitext2_tensorbridge_fdo_tp2_eager_430103.json",
+    "eager_sha256": "758b1ccb4a05b13aa0ead2d0040cdcf2939150c1e35c11a5e66e0aeaa02a44e1",
+    "graph_result": "benchmarks/results/ppl/wikitext2_tensorbridge_fdo_tp2_graph_430103.json",
+    "graph_sha256": "68a8876b257e6e9b2b88c10b4649bd8d5e073aabc8ac858bbe3cca9a11bde8a8",
+    "decode_delta_mean_nll": -0.0005972212661955745,
+    "decode_delta_nll_ci90": [-0.0021208716691501466, 0.0009264291367589979],
+    "decode_chosen_probability_ratio": 1.0005973996383235,
+    "noise_upper90": {
+      "prompt": 1.0,
+      "prefill_position0": 1.0,
+      "decode_scalar": 1.4718886324095344,
+      "decode_vector_rms": 1.2940162853563724
+    },
+    "mode_effect_p_values": {
+      "rms": 0.16528347165283472,
+      "max_t": 0.3712628737126287
+    },
+    "median_generation_seconds": {
+      "eager": 0.66445407550782,
+      "graph": 0.185740759130567,
+      "speedup": 3.57731969341602
+    }
+  },
+  "runtime_gates": {
+    "token_ids_exact": true,
+    "protocol_mismatches": 0,
+    "alignment_errors": 0,
+    "scheduler_iterations_per_run": 8,
+    "prefill_mode_counts_per_run": {"NONE": 1},
+    "decode_mode_counts_per_run": {"FULL": 7},
+    "decode_padding": 0,
+    "driver_memory_stability": true
+  },
+  "nsys": {
+    "job_id": "430132",
+    "node": "ACD1-40",
+    "resources": {"gpus": 2, "cpus": 16, "memory_gib": 160},
+    "application_status": "passed",
+    "repeat_runs": 12,
+    "runtime_scheduler_graph_dispatches": 84,
+    "captured_cuda_graph_launch_calls": 49,
+    "captured_graph_trace_rows": 49,
+    "captured_graph_instantiate_calls": 4,
+    "report": "benchmarks/results/nsys/tensorbridge_fdo_tp2_430132.nsys-rep",
+    "report_sha256": "0035d1d49dc25a499bac887176821cde89d589940b545b5a30cbe4b6c769a0af",
+    "cuda_api_summary": "benchmarks/results/nsys/tensorbridge_fdo_tp2_430132_cuda_api_sum.txt",
+    "cuda_api_summary_sha256": "6c624a97b6c988eb5efb091b17032d04f3f54ffeba12bf470bc6b1f1c3e227eb",
+    "ppl_result_sha256": "9bc71fa099a17374b1c2b7e20286e014cbf8d1be16e3c68713ff0a5c6ae05097"
+  },
+  "diagnostics": {
+    "block0_rare_token_divergence_job": "429950",
+    "block26_20_measured_prefill_inconclusive_job": "430009",
+    "tp2_fused_allreduce_rms_driver_hang_job": "430032",
+    "tp2_fused_allreduce_rms_resolution": "disable optional fusion for FDO TP; ordinary all-reduce remains enabled"
+  },
+  "source_sha256": {
+    "scripts/eval_nvfp4_wikitext2_ppl.py": "afab5d17fbcb799f2a319877d9c65b58e8059e1514ef95509a9277140f15814a",
+    "tests/test_ppl_accounting.py": "5b2b8021376dfc39e1800c30259ab361118a6b33e708006f1459991dabfa12cb",
+    "sbatch/run_eval_nvfp4_wikitext2_ppl.sbatch": "ea71f5677929e4271e57acda0d1b9a8a4ffde38c16c7c7d25387ec580b18bc91",
+    "sbatch/run_eval_nvfp4_fdo_pair.sbatch": "b387ba013fb26bbe8fcb25d7255aa4eb28e7cf0af51b73217f09998707538508",
+    "sbatch/run_profile_nvfp4_fdo_graph.sbatch": "0d549c1a6546aa53b0ef3b34356d887bbb58462d6f53b22660401b90f996acce"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "format": "tensorbridge_accuracy_expansion_protocol",
+  "created_before_prospective_stage_runs": true,
+  "created_date": "2026-07-18",
+  "relation_to_confirmation_v1": {
+    "protocol_sha256": "3a3ab3a617143b29eb94af5a75316b74f44d66841d2970a85206c4ac091350a2",
+    "unchanged": true,
+    "user_authorized_expansion_after_v1": true,
+    "post_confirmation_results_are_not_reclassified_as_preregistered": true
+  },
+  "checkpoint": {
+    "repo_id": "nvidia/Qwen3.6-27B-NVFP4",
+    "revision": "0893e1606ff3d5f97a441f405d5fc541a6bdf404",
+    "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f"
+  },
+  "arms": [
+    "official",
+    "normal_a8",
+    "fpma_default",
+    "selector_alpha1",
+    "ulp_v1",
+    "alpha_0960"
+  ],
+  "arm_roles": {
+    "official": "external_w4a16_reference",
+    "normal_a8": "activation_quantization_baseline",
+    "fpma_default": "tensorbridge_primary_path",
+    "selector_alpha1": "exploratory_zero_steady_state_kernel_cost",
+    "ulp_v1": "exploratory_small_kernel_cost",
+    "alpha_0960": "exploratory_zero_steady_state_kernel_cost_wikitext_calibrated"
+  },
+  "zero_cost_contract": {
+    "meaning": "no additional steady_state_kernel_instructions_or_weight_bytes",
+    "selector_alpha1": {
+      "alpha": 1.0,
+      "selector": "normal_b8_sse",
+      "selector_chunk_rows": 256,
+      "load_time_work_or_temporary_memory_may_increase": true
+    },
+    "alpha_0960": {
+      "alpha": 0.96,
+      "selector": "none",
+      "selected_on_wikitext2": true,
+      "held_out_interpretation_required": true
+    }
+  },
+  "post_confirmation_sensitivity": {
+    "suites": [
+      "confirm_mc",
+      "confirm_generation"
+    ],
+    "new_arms_only": [
+      "selector_alpha1",
+      "alpha_0960"
+    ],
+    "reuse_existing_v1_arms": [
+      "official",
+      "normal_a8",
+      "fpma_default",
+      "ulp_v1"
+    ],
+    "interpretation": "paired sensitivity after the original task results were observed"
+  },
+  "prospective_stages": [
+    {
+      "index": 1,
+      "suite": "stage1_mc",
+      "tasks": [
+        "hellaswag",
+        "winogrande"
+      ],
+      "selection": {
+        "kind": "first_n_after_lm_eval_task_preprocessing",
+        "limit_count_per_task": 512,
+        "expected_total": 1024
+      },
+      "metrics": {
+        "hellaswag": "acc_norm,none",
+        "winogrande": "acc,none"
+      },
+      "dataset_snapshots": {
+        "hellaswag": {
+          "path": "Rowan/hellaswag",
+          "name": null,
+          "split": "validation",
+          "size": 10042,
+          "datasets_fingerprint": "71a62ba9d49be089",
+          "cached_builder_hash": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+          "canonical_jsonl_sha256": "a09a861cd677a5df4bbe076e9079bd4c5f66487e849b1a4a9e0f32279a0b742e",
+          "task_source_sha256": "652027d438d4bc2f23b3525f7e3f255eae0be75cff322d0b7f28bfebf28484c0",
+          "selected_docs_sha256": "39af1ea86866600455e0543d95601d1e158b0b42c384667ddb9dd3346e09024a"
+        },
+        "winogrande": {
+          "path": "allenai/winogrande",
+          "name": "winogrande_xl",
+          "split": "validation",
+          "size": 1267,
+          "datasets_fingerprint": "5b125086384c0403",
+          "cached_builder_hash": "01e74176c63542e6b0bcb004dcdea22d94fb67b5",
+          "canonical_jsonl_sha256": "f1507af323384e8047d617a63d268bac5a134d7f30f62b1152ce1490475da868",
+          "task_source_sha256": "abf47611da8131be4ea5450e1189203de902c8c6d00593f45bf59e62f03b1509",
+          "selected_docs_sha256": "2745f5df477b490dc9f3b1d02b4a1a0eac4a9c7794be959a44451835f6ebdd33"
+        }
+      },
+      "composite_sample_identity_sha256": "b8f345a9030494ab72895765d51cc312f0600043fc6f0eac489e516e451c310a"
+    },
+    {
+      "index": 2,
+      "suite": "stage2_mmlu_pro",
+      "tasks": [
+        "mmlu_pro"
+      ],
+      "selection": {
+        "kind": "first_n_per_leaf_after_lm_eval_task_preprocessing",
+        "limit_count_per_leaf": 64,
+        "leaf_count": 14,
+        "expected_total": 896
+      },
+      "num_fewshot": 5,
+      "max_model_len": 16384,
+      "metric": "exact_match,custom-extract",
+      "leaf_tasks": {
+        "mmlu_pro_biology": 717,
+        "mmlu_pro_business": 789,
+        "mmlu_pro_chemistry": 1132,
+        "mmlu_pro_computer_science": 410,
+        "mmlu_pro_economics": 844,
+        "mmlu_pro_engineering": 969,
+        "mmlu_pro_health": 818,
+        "mmlu_pro_history": 381,
+        "mmlu_pro_law": 1101,
+        "mmlu_pro_math": 1351,
+        "mmlu_pro_other": 924,
+        "mmlu_pro_philosophy": 499,
+        "mmlu_pro_physics": 1299,
+        "mmlu_pro_psychology": 798
+      },
+      "dataset_snapshot": {
+        "path": "TIGER-Lab/MMLU-Pro",
+        "name": "default",
+        "split": "test",
+        "size": 12032,
+        "datasets_fingerprint": "0072dd0a32d256fc",
+        "cached_builder_hash": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+        "canonical_jsonl_sha256": "372a592e9d8e15302d6e7ccab29e040ddae786b5dcddce18365b96ff43939f68",
+        "task_source_sha256": "7cff51577642fb1ae79a3c7991ce773f2505afb6fc8e7802988c94ad094d10ed",
+        "selected_docs_sha256": "8fc7f27b644625b3d0d6efa9b2d83523b7f7ff33c8cb91616acd266a32dda312"
+      },
+      "aggregation": "equal_64_sample_micro_average_across_14_leaves"
+    },
+    {
+      "index": 3,
+      "suite": "stage3_generation",
+      "tasks": [
+        "tensorbridge_gsm8k_relative_smoke"
+      ],
+      "task_source_sha256": "47c193604c56a717778641320d09ed49cab619f00406ce3588cc235c447a36a5",
+      "selection": {
+        "kind": "sha256_rank_excluding_ids_v1",
+        "count": 256,
+        "excluded_count": 144,
+        "excluded_ids_sha256": "f6cf62e20cba6e0366d6a4dbdf19715d806afa2f7d5042ed26dea058a50a8bce",
+        "manifest": "vllm/plugins/tensorbridge_evaluation/samples/gsm8k_test_stage3_sha256_rank_256.json",
+        "manifest_sha256": "37077471979c08a0b71ecdb384c0d4b5c7d9e37f59225ba724bb0ba3693915e4",
+        "ids_sha256": "481e6b075c43ca12c490c460a38430aa57dd22dc83aa5915edc7a268af771cb4",
+        "selected_docs_sha256": "ee105ca1a10576013a6708dba5da76d5330cecf4481e6acc02db9018a79bf263"
+      },
+      "metric": "exact_match,final-answer",
+      "format_gate": {
+        "minimum_valid": 254,
+        "total": 256
+      },
+      "thinking": false,
+      "temperature": 0.0,
+      "max_gen_toks": 1024
+    }
+  ],
+  "execution": {
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "gpus_per_job": 1,
+    "cpus_per_job": 8,
+    "host_memory_gib": 80,
+    "cpu_thread_limit": 8,
+    "tensor_parallel_size": 1,
+    "dtype": "bfloat16",
+    "quantization": "modelopt_mixed",
+    "batch_size": "auto",
+    "gpu_memory_utilization": 0.5,
+    "max_num_seqs": 8,
+    "max_model_len_by_stage": {
+      "stage1_mc": 4096,
+      "stage2_mmlu_pro": 16384,
+      "stage3_generation": 4096
+    },
+    "runtime_versions": {
+      "lm_eval": "0.4.11",
+      "vllm": "0.20.2+cu128",
+      "transformers": "5.9.0",
+      "datasets": "4.8.5",
+      "torch": "2.11.0+cu128"
+    },
+    "allow_runtime_version_mismatch": false,
+    "bootstrap_iters": 0,
+    "seeds": {
+      "python": 0,
+      "numpy": 1234,
+      "torch": 1234,
+      "fewshot": 1234,
+      "model": 1234
+    },
+    "independent_physical_cache_per_arm_and_stage": true,
+    "default_abi_cache_seed_sha256": "f4dfa648fb1c00544671c33780496aac5c8b4372ad36784f63f36361cb02d5b2",
+    "ulp_v1_cache_seed_sha256": "da6b312e7ee12d4921f0e1178a27816d81065393fbdeb6770376f6ba391bbbbb"
+  },
+  "analysis": {
+    "paired": true,
+    "pairing_key": [
+      "leaf_task",
+      "doc_id",
+      "filter"
+    ],
+    "comparisons": [
+      "normal_a8 - official",
+      "fpma_default - normal_a8",
+      "selector_alpha1 - fpma_default",
+      "selector_alpha1 - normal_a8",
+      "ulp_v1 - fpma_default",
+      "ulp_v1 - normal_a8",
+      "alpha_0960 - fpma_default",
+      "alpha_0960 - normal_a8"
+    ],
+    "screening_margin_vs_normal_a8": -0.05,
+    "screening_decision": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "paired_confidence_interval": {
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "confidence_level": 0.95,
+      "resamples": 10000,
+      "seed": 20260718,
+      "mmlu_pro_resampling_unit": "document_within_fixed_category"
+    },
+    "mcnemar": {
+      "method": "exact_binomial",
+      "alternative": "two-sided"
+    },
+    "invalid_generation_is_incorrect": true,
+    "do_not_drop_ambiguous_or_discordant_samples": true,
+    "no_result_dependent_arm_dropping_between_stages": true,
+    "all_six_arms_run_in_all_three_stages": true
+  },
+  "stop_after_stage3": true,
+  "additional_tasks_not_authorized": true
+}

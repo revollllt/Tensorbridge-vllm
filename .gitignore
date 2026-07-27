@@ -149,6 +149,13 @@ celerybeat.pid
 # Environments
 .env
 .venv
+
+# TensorBridge integration artifacts
+/benchmarks/tmp/
+/benchmarks/results/
+/sbatch/logs/
+/slurm-*.out
+/slurm-*.err
 env/
 venv/
 ENV/

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "experiment": "tensorbridge_lm_eval_smoke_20260717",
+  "scope": "wiring_and_regression_smoke_not_statistical_accuracy_evidence",
+  "checkpoint": {
+    "model": "nvidia/Qwen3.6-27B-NVFP4",
+    "revision": "0893e1606ff3d5f97a441f405d5fc541a6bdf404",
+    "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+    "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389"
+  },
+  "runtime": {
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "gpus_per_job": 1,
+    "cpus_per_job": 8,
+    "host_memory_gib": 80,
+    "cpu_thread_limits": 8,
+    "vllm": "0.20.2+cu128",
+    "lm_eval": "0.4.11",
+    "response_cache": null,
+    "generation": {
+      "temperature": 0.0,
+      "thinking": false,
+      "max_gen_toks": 1024
+    }
+  },
+  "source": {
+    "tensorbridge_head": "416fd749764eacde416efe9f4c2e3bc43c1da12b",
+    "mc_tree_sha256": "605a231f188351e40f152c789491b56984088e6f7fb8e2799d34cfcfbc7ce7f2",
+    "generation_tree_sha256": "be02076d08f13b96254e6bb809513818ce41ce63725fa23eb671f8d1e1c5d065",
+    "generation_tree_files": 125,
+    "task_yaml_sha256": "c6665a502cb078481ee63ffc67c04bcadff1bd7a47a87c7e614239ab26dd22c8",
+    "vllm_head": "bc150f50299199599673614f80d12a196f377655",
+    "vllm_tracked_diff_sha256": "e42446b24fabbd63f6f9c30aa2470c1c58d321e48da33094128b981cb1867b9c"
+  },
+  "protocols": {
+    "smoke_mc": {
+      "task": "arc_challenge",
+      "samples": 16,
+      "num_fewshot": 0,
+      "request_type": "multiple_choice_loglikelihood",
+      "chat_template": false
+    },
+    "smoke_generation": {
+      "task": "tensorbridge_gsm8k_relative_smoke",
+      "samples": 16,
+      "num_fewshot": 0,
+      "request_type": "generate_until",
+      "chat_template": true,
+      "system_instruction": "Use no more than six short sentences or equations. End with a separate final line in the exact form The answer is N. Replace N with the numeric answer only, omit units, and write nothing after that line.",
+      "filter": "final-answer",
+      "filter_regex": "(?m)^The answer is (-?[0-9][0-9,]*(?:\\.[0-9]+)?)\\.?\\s*\\Z"
+    }
+  },
+  "results": {
+    "smoke_mc": [
+      {
+        "arm": "official_marlin_w4a16",
+        "job_id": "417686",
+        "acc": 0.5625,
+        "acc_norm": 0.5,
+        "artifact": "benchmarks/results/lm_eval/417686/smoke_mc/official_417686.json",
+        "artifact_sha256": "246be85f10eeefa76c01986d0b0273764e6d25116656fbf11c11aa19f4d81f32",
+        "samples_sha256": "d95e671de12e96c1132de37e2db5737398637d24e5feffc973ce14ed1e651041"
+      },
+      {
+        "arm": "tensorbridge_default_fpma_snc",
+        "job_id": "417692",
+        "acc": 0.5625,
+        "acc_norm": 0.4375,
+        "artifact": "benchmarks/results/lm_eval/417691/smoke_mc/fpma_default_417692.json",
+        "artifact_sha256": "dbd3141789126754bbd72af6c88fbccfac1a672a19570e5f4892e10452b6ce26",
+        "samples_sha256": "21285e5e16205c34096f44827b48cdc99e4400594187ccb94d1bc366c05b1a48"
+      },
+      {
+        "arm": "tensorbridge_ulp_scale_msb_flag_v1",
+        "job_id": "417691",
+        "acc": 0.5625,
+        "acc_norm": 0.5,
+        "artifact": "benchmarks/results/lm_eval/417691/smoke_mc/ulp_v1_417691.json",
+        "artifact_sha256": "d653f8716562fffc871632480fb136fd699c5cde3cf9cd24d14db04213c4b69f",
+        "samples_sha256": "2a7ca06d27a9dacb54637cf92ca04735be52a036d66a8922550770890d37e247"
+      }
+    ],
+    "smoke_generation": [
+      {
+        "arm": "official_marlin_w4a16",
+        "job_id": "417746",
+        "exact_match": 1.0,
+        "format_valid": 1.0,
+        "artifact": "benchmarks/results/lm_eval/417746/smoke_generation/official_417746.json",
+        "artifact_sha256": "dc009c389a153d4bf27ca8928edec1573830aa306f51fb09ff5fb1c890b4f974",
+        "samples_sha256": "e1f7e4f754f7cd7f9d27eaa3644c416e124b88a88ffdc52f0524689c68e9825e"
+      },
+      {
+        "arm": "normal_a8_cutlass",
+        "job_id": "417760",
+        "exact_match": 1.0,
+        "format_valid": 1.0,
+        "artifact": "benchmarks/results/lm_eval/417760/smoke_generation/normal_a8_417760.json",
+        "artifact_sha256": "daba552f216da551ed61704641c6e94cab33a4a3abeb7b4a386d8f3138d8943d",
+        "samples_sha256": "b63ed18409fca8b3c5a9bd626d2a7782e2b4e1a5e60a3f30b799b0bf2418056a"
+      },
+      {
+        "arm": "tensorbridge_default_fpma_snc",
+        "job_id": "417753",
+        "exact_match": 0.875,
+        "format_valid": 1.0,
+        "artifact": "benchmarks/results/lm_eval/417752/smoke_generation/fpma_default_417753.json",
+        "artifact_sha256": "823dd06d9e97a589a8f7dbad518da88fd80adc5ac547607b6772aad8c0068398",
+        "samples_sha256": "2284e13eb176c29834a06de14919c3b3a979a1950ad3a45f164b7a2e1719f486"
+      },
+      {
+        "arm": "tensorbridge_ulp_scale_msb_flag_v1",
+        "job_id": "417752",
+        "exact_match": 0.875,
+        "format_valid": 0.9375,
+        "artifact": "benchmarks/results/lm_eval/417752/smoke_generation/ulp_v1_417752.json",
+        "artifact_sha256": "84bdc10cc9131484a95b67b36de2d9653d771773ab0634daa5958e548bcedb10",
+        "samples_sha256": "ca4dad9840c1c50d4cc27f30ce143d95150da3ea247335fc8bd0daa080b86af1"
+      }
+    ],
+    "ulp_replay_first_8": {
+      "job_id": "417767",
+      "samples": 8,
+      "exact_match": 1.0,
+      "format_valid": 1.0,
+      "artifact": "benchmarks/results/lm_eval/417767/smoke_generation/ulp_v1_417767.json",
+      "artifact_sha256": "e2672d8e716bca9282e4aee8c32047111d5263281f5a7c741ec865cada353633",
+      "samples_sha256": "7c6f3444cbaa8aceab1903718cadc3bd7866adea07250c441cf738f3002265b9",
+      "cache_reused_from": "benchmarks/tmp/lm_eval/417752_4_smoke_generation_ulp_v1/tensorbridge",
+      "purpose": "check whether the single-token ModifiedDate output on doc 7 is stable"
+    }
+  },
+  "pairing_audit": {
+    "mc_canonical_sha256": "629784c2f0415924a858870415a026889768e8f444f2f881888eeef0158dba7d",
+    "generation_doc_hash_sequence_sha256": "bcbcbc94cf808f87bbd40836efc7e24160ff34cf8139ea4c5104c9ac761565b1",
+    "generation_prompt_hash_sequence_sha256": "12f1b149f93de663556438b5e7cc17fda8bc9b3e535bb611d26c735d002fda0f",
+    "generation_target_hash_sequence_sha256": "fd616fb134e44b84483c197a2f8d925461d2619008cb93900c06ef75a13685da",
+    "cross_arm_mismatches": 0
+  },
+  "observations": [
+    "All three MC arms select the same raw answer on all 16 documents; normalized scoring differs on boundary cases.",
+    "Official and normal-A8 answer all 16 custom GSM8K samples correctly in this run.",
+    "Default FPMA-SNC and ULP V1 both miss docs 7 and 12 in the 16-sample run; there are no reverse flips.",
+    "Default doc 7 omits the 40 minutes spent before restart. Both FPMA arms answer 12 rather than the target year 13 on the semantically ambiguous break-even sample.",
+    "ULP V1 emits the single token ModifiedDate on doc 7 in the 16-sample run, but answers doc 7 correctly in the first-8 replay. The anomaly is not stable under the reduced replay schedule.",
+    "No retained custom-task output reaches the 1024-token cap. The stock GSM8K pilot is excluded because its last-number filter and 512-token cap confound the metric."
+  ],
+  "limitations": [
+    "Sixteen samples are a wiring/regression smoke, not evidence of a statistically significant model-level accuracy delta.",
+    "The smoke uses lm-eval limit=16, which selects document IDs 0 through 15 rather than a randomized sample.",
+    "The exact paired two-sided p-value for two one-direction discordant samples is 0.5.",
+    "Generation can bifurcate under small numeric or batching changes even with greedy decoding; repeated held-out evaluation is required.",
+    "Backend route counts in these artifacts are a strict expected contract, not a dynamic per-module runtime route audit.",
+    "The editable vLLM checkout remains under an old humming path and is dirty; its untracked sitecustomize.py content is not yet bound by the provenance record.",
+    "The old MC array job used a shared log filename, so the Default worker log was overwritten; its artifact and independent cubin cache remain intact."
+  ],
+  "next_gate": {
+    "run_now": false,
+    "recommended": "After freezing the implementation, use full ARC-Challenge plus a predeclared, hashed 128-sample custom GSM8K subset for Official, normal-A8, Default FPMA-SNC, and ULP V1. Keep MMLU-Pro and broad task expansion deferred."
+  }
+}

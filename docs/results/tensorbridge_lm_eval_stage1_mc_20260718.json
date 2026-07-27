@@ -1,0 +1,3045 @@
+{
+  "arms": {
+    "alpha_0960": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.599609375,
+              "correct": 307,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.765625,
+              "correct": 392,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.599609375,
+              "correct": 307,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.765625,
+              "correct": 392,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "fpma_default": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.599609375,
+              "correct": 307,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.76171875,
+              "correct": 390,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.599609375,
+              "correct": 307,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.76171875,
+              "correct": 390,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.763671875,
+              "correct": 391,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.763671875,
+              "correct": 391,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "normal_a8": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.59375,
+              "correct": 304,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.76171875,
+              "correct": 390,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.59375,
+              "correct": 304,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.76171875,
+              "correct": 390,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.77734375,
+              "correct": 398,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.77734375,
+              "correct": 398,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "official": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.59375,
+              "correct": 304,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.59375,
+              "correct": 304,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.58984375,
+              "correct": 302,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.759765625,
+              "correct": 389,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.58984375,
+              "correct": 302,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.759765625,
+              "correct": 389,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.787109375,
+              "correct": 403,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.787109375,
+              "correct": 403,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "ulp_v1": {
+      "tasks": {
+        "hellaswag": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.591796875,
+              "correct": 303,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.591796875,
+              "correct": 303,
+              "total": 512
+            },
+            "acc_norm": {
+              "accuracy": 0.767578125,
+              "correct": 393,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "analysis_metrics": {
+            "acc": {
+              "accuracy": 0.783203125,
+              "correct": 401,
+              "total": 512
+            }
+          },
+          "full_evaluation_metrics": {
+            "acc": {
+              "accuracy": 0.783203125,
+              "correct": 401,
+              "total": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "alpha_0960_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "alpha_0960",
+      "format_gate": null,
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.599609375,
+              "candidate_accuracy": 0.599609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 53,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 180,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 301,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 366,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 384,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 442,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 6,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 141,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 337,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 416,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 424,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 475,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 301,
+              "concordant_both_incorrect": 199,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 12,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.013671875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.013671875
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.765625,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 21,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 61,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 66,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 153,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 320,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 359,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 395,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 425,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 8,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 11,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 50,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 309,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 340,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 384,
+              "concordant_both_incorrect": 114,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 14,
+                "method": "exact_binomial",
+                "p_value": 0.79052734375
+              },
+              "paired_accuracy_delta": 0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.009765625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.017578125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.763671875,
+              "candidate_accuracy": 0.767578125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 35,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 45,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 81,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 106,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 123,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 156,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 161,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 171,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 185,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 225,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 262,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 323,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 333,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 336,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 403,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 406,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 17,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 46,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 89,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 103,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 129,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 162,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 190,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 198,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 201,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 207,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 247,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 283,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 352,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 438,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 501,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 15,
+              "concordant_both_correct": 376,
+              "concordant_both_incorrect": 104,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 32,
+                "method": "exact_binomial",
+                "p_value": 0.860050065908581
+              },
+              "paired_accuracy_delta": 0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.017578125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.025390625
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "alpha_0960_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "alpha_0960",
+      "format_gate": null,
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.00390625,
+            "unit": "hellaswag"
+          },
+          {
+            "delta": -0.009765625,
+            "unit": "winogrande"
+          }
+        ]
+      },
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.59375,
+              "candidate_accuracy": 0.599609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 53,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 301,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 366,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 384,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 442,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 5,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 182,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 424,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 302,
+              "concordant_both_incorrect": 203,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 7,
+                "method": "exact_binomial",
+                "p_value": 0.453125
+              },
+              "paired_accuracy_delta": 0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.00390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.015625
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.765625,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 61,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 66,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 153,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 359,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 374,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 425,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 7,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 96,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 98,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 309,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 360,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 5,
+              "concordant_both_correct": 385,
+              "concordant_both_incorrect": 115,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 12,
+                "method": "exact_binomial",
+                "p_value": 0.7744140625
+              },
+              "paired_accuracy_delta": 0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.009765625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.017578125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.77734375,
+              "candidate_accuracy": 0.767578125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 45,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 123,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 185,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 205,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 323,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 390,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 403,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 9,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 32,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 115,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 144,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 145,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 190,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 195,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 196,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 198,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 201,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 231,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 243,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 283,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 386,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 14,
+              "concordant_both_correct": 384,
+              "concordant_both_incorrect": 105,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 23,
+                "method": "exact_binomial",
+                "p_value": 0.4048728942871094
+              },
+              "paired_accuracy_delta": -0.009765625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.029296875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0078125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "fpma_default_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "fpma_default",
+      "format_gate": null,
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.0,
+            "unit": "hellaswag"
+          },
+          {
+            "delta": -0.013671875,
+            "unit": "winogrande"
+          }
+        ]
+      },
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.59375,
+              "candidate_accuracy": 0.599609375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 141,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 337,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 416,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 475,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 5,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 180,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 182,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 302,
+              "concordant_both_incorrect": 203,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 7,
+                "method": "exact_binomial",
+                "p_value": 0.453125
+              },
+              "paired_accuracy_delta": 0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.00390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.015625
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.76171875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 11,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 50,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 340,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 374,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 6,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 21,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 96,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 98,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 320,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 360,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 395,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 384,
+              "concordant_both_incorrect": 116,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 12,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.013671875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.013671875
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.77734375,
+              "candidate_accuracy": 0.763671875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 46,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 89,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 103,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 129,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 162,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 205,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 207,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 247,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 352,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 390,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 438,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 501,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 13,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 32,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 35,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 81,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 106,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 115,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 144,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 145,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 156,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 161,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 171,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 195,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 196,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 225,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 231,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 243,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 262,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 333,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 336,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 386,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 406,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 20,
+              "concordant_both_correct": 378,
+              "concordant_both_incorrect": 101,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 33,
+                "method": "exact_binomial",
+                "p_value": 0.296206368599087
+              },
+              "paired_accuracy_delta": -0.013671875,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.03515625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0078125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "normal_a8_vs_official": {
+      "baseline": "official",
+      "candidate": "normal_a8",
+      "format_gate": null,
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.59375,
+              "candidate_accuracy": 0.59375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 182,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 384,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 1,
+              "concordant_both_correct": 303,
+              "concordant_both_incorrect": 207,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 2,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": 0.0,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.005859375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.005859375
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.767578125,
+              "candidate_accuracy": 0.76171875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 320,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 360,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 3,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 33,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 66,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 68,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 153,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 340,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 387,
+              "concordant_both_incorrect": 116,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 9,
+                "method": "exact_binomial",
+                "p_value": 0.5078125
+              },
+              "paired_accuracy_delta": -0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.017578125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.005859375
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.767578125,
+              "candidate_accuracy": 0.77734375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 35,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 115,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 195,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 196,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 231,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 243,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 253,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 333,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 445,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 453,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 10,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 89,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 103,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 123,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 205,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 390,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 5,
+              "concordant_both_correct": 388,
+              "concordant_both_incorrect": 109,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 15,
+                "method": "exact_binomial",
+                "p_value": 0.3017578125
+              },
+              "paired_accuracy_delta": 0.009765625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.00390625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.025390625
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "selector_alpha1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "selector_alpha1",
+      "format_gate": null,
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.599609375,
+              "candidate_accuracy": 0.58984375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 180,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 141,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 304,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 337,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 424,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 475,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 301,
+              "concordant_both_incorrect": 204,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 7,
+                "method": "exact_binomial",
+                "p_value": 0.125
+              },
+              "paired_accuracy_delta": -0.009765625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.01953125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.759765625,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 33,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 66,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 98,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 102,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 4,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 50,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 340,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 374,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 5,
+              "concordant_both_correct": 385,
+              "concordant_both_incorrect": 118,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 9,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": -0.001953125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.013671875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.009765625
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.763671875,
+              "candidate_accuracy": 0.787109375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 32,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 81,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 106,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 115,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 123,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 144,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 145,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 161,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 171,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 195,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 196,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 225,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 231,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 262,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 307,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 333,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 336,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 386,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 403,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 406,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 21,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 129,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 162,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 207,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 247,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 295,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 438,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 453,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 9,
+              "concordant_both_correct": 382,
+              "concordant_both_incorrect": 100,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 30,
+                "method": "exact_binomial",
+                "p_value": 0.04277394525706768
+              },
+              "paired_accuracy_delta": 0.0234375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.001953125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.044921875
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "selector_alpha1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "selector_alpha1",
+      "format_gate": null,
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": -0.001953125,
+            "unit": "hellaswag"
+          },
+          {
+            "delta": 0.009765625,
+            "unit": "winogrande"
+          }
+        ]
+      },
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.59375,
+              "candidate_accuracy": 0.58984375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 416,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 182,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 304,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 424,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 3,
+              "concordant_both_correct": 301,
+              "concordant_both_incorrect": 207,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 4,
+                "method": "exact_binomial",
+                "p_value": 0.625
+              },
+              "paired_accuracy_delta": -0.00390625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.01171875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.00390625
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.759765625,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 11,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 33,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 66,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 102,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 5,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 21,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 96,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 320,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 360,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 395,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 384,
+              "concordant_both_incorrect": 117,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 11,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": -0.001953125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.013671875,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.01171875
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.77734375,
+              "candidate_accuracy": 0.787109375,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 46,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 89,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 103,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 123,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 205,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 307,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 352,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 390,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 403,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 501,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 11,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 35,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 156,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 243,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 295,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 453,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 6,
+              "concordant_both_correct": 392,
+              "concordant_both_incorrect": 103,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 17,
+                "method": "exact_binomial",
+                "p_value": 0.332305908203125
+              },
+              "paired_accuracy_delta": 0.009765625,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.005859375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.025390625
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "ulp_v1_vs_fpma_default": {
+      "baseline": "fpma_default",
+      "candidate": "ulp_v1",
+      "format_gate": null,
+      "screening_vs_normal_a8": null,
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.599609375,
+              "candidate_accuracy": 0.591796875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 182,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 141,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 322,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 416,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 475,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 5,
+              "concordant_both_correct": 302,
+              "concordant_both_incorrect": 204,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 6,
+                "method": "exact_binomial",
+                "p_value": 0.21875
+              },
+              "paired_accuracy_delta": -0.0078125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.017578125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.767578125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 21,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 33,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 98,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 151,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 320,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 359,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 395,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 448,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 8,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 50,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 302,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 340,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 5,
+              "concordant_both_correct": 385,
+              "concordant_both_incorrect": 114,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 13,
+                "method": "exact_binomial",
+                "p_value": 0.5810546875
+              },
+              "paired_accuracy_delta": 0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.0078125,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.01953125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.763671875,
+              "candidate_accuracy": 0.783203125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 32,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 35,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 45,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 74,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 81,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 106,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 144,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 145,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 161,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 171,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 176,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 225,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 243,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 262,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 333,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 336,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 386,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 406,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 19,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 46,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 162,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 207,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 247,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 352,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 438,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 445,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 478,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 9,
+              "concordant_both_correct": 382,
+              "concordant_both_incorrect": 102,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 28,
+                "method": "exact_binomial",
+                "p_value": 0.08715855330228806
+              },
+              "paired_accuracy_delta": 0.01953125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": 0.0,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.0390625
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    },
+    "ulp_v1_vs_normal_a8": {
+      "baseline": "normal_a8",
+      "candidate": "ulp_v1",
+      "format_gate": null,
+      "screening_vs_normal_a8": {
+        "confidence_intervals_are_reported_but_not_a_gate": true,
+        "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+        "format_check_passed": true,
+        "margin": -0.05,
+        "point_estimate_checks_passed": true,
+        "screening_check_passed": true,
+        "units": [
+          {
+            "delta": 0.005859375,
+            "unit": "hellaswag"
+          },
+          {
+            "delta": 0.005859375,
+            "unit": "winogrande"
+          }
+        ]
+      },
+      "tasks": {
+        "hellaswag": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.59375,
+              "candidate_accuracy": 0.591796875,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 337,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 1,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 180,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 322,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 2,
+              "concordant_both_correct": 302,
+              "concordant_both_incorrect": 207,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 3,
+                "method": "exact_binomial",
+                "p_value": 1.0
+              },
+              "paired_accuracy_delta": -0.001953125,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.009765625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.00390625
+              },
+              "samples": 512
+            },
+            "acc_norm": {
+              "baseline_accuracy": 0.76171875,
+              "candidate_accuracy": 0.767578125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 11,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 33,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 151,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 359,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 374,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 448,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_gain_flips": 6,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 96,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 240,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                },
+                {
+                  "doc_id": 360,
+                  "filter": "none",
+                  "leaf_task": "hellaswag"
+                }
+              ],
+              "candidate_loss_flips": 3,
+              "concordant_both_correct": 387,
+              "concordant_both_incorrect": 116,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 9,
+                "method": "exact_binomial",
+                "p_value": 0.5078125
+              },
+              "paired_accuracy_delta": 0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.005859375,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.017578125
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc_norm"
+        },
+        "winogrande": {
+          "metrics": {
+            "acc": {
+              "baseline_accuracy": 0.77734375,
+              "candidate_accuracy": 0.783203125,
+              "candidate_gain_flip_keys": [
+                {
+                  "doc_id": 45,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 74,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 89,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 103,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 129,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 176,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 205,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 390,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 470,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 501,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_gain_flips": 10,
+              "candidate_loss_flip_keys": [
+                {
+                  "doc_id": 115,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 156,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 195,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 196,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 231,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 385,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                },
+                {
+                  "doc_id": 445,
+                  "filter": "none",
+                  "leaf_task": "winogrande"
+                }
+              ],
+              "candidate_loss_flips": 7,
+              "concordant_both_correct": 391,
+              "concordant_both_incorrect": 104,
+              "exact_mcnemar": {
+                "alternative": "two-sided",
+                "discordant": 17,
+                "method": "exact_binomial",
+                "p_value": 0.629058837890625
+              },
+              "paired_accuracy_delta": 0.005859375,
+              "paired_confidence_interval": {
+                "confidence_level": 0.95,
+                "lower": -0.009765625,
+                "method": "paired_nonparametric_bootstrap_percentile",
+                "quantile_interpolation": "linear_type7",
+                "resamples": 10000,
+                "seed": 20260718,
+                "upper": 0.021484375
+              },
+              "samples": 512
+            }
+          },
+          "primary_metric": "acc"
+        }
+      }
+    }
+  },
+  "format": "tensorbridge_nvfp4_lm_stage_analysis",
+  "inputs": {
+    "alpha_0960": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/alpha_0960_419692.json",
+      "result_sha256": "7993ddd94f03403f423b6fc9f4f08f59fc4c196751c2dc32858c521c997ebc8c",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/alpha_0960_419692_samples/hellaswag.jsonl",
+          "sha256": "f6d9189d8bf0b20f9eeaf59d8572ca33baca448b9f17669df87add67a59fdae1"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/alpha_0960_419692_samples/winogrande.jsonl",
+          "sha256": "9b312a2d1be14c491bcd368d5e8e6df5721642dc43a0ab42f5e421e2da4c2910"
+        }
+      }
+    },
+    "fpma_default": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/fpma_default_419695.json",
+      "result_sha256": "91a6c72b57d2abb7cdc5b228f669b40b9b91e00d9b195eada34abb605813ba84",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/fpma_default_419695_samples/hellaswag.jsonl",
+          "sha256": "cc003b3db5e0fcdaf4ce1b6d3271ff3669b30f23c5adbb3894681d7f3bdfa343"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/fpma_default_419695_samples/winogrande.jsonl",
+          "sha256": "719fe4ceb06b336cf27bce1d160ff859e59923a86764f794cc6084055da49051"
+        }
+      }
+    },
+    "normal_a8": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/normal_a8_419694.json",
+      "result_sha256": "501a242d958fa61995f5ad8dae228e4b5b309a01f09e254d5d976a5e942f63cc",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/normal_a8_419694_samples/hellaswag.jsonl",
+          "sha256": "91ad474b52cd4d6912cad30d33be92d6b76c0ce248fa89a6a0217e7643983aae"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/normal_a8_419694_samples/winogrande.jsonl",
+          "sha256": "02d798dcf49837574f85833393a261a9f97c6cac7a4dae3eaeaaa950cc3d058b"
+        }
+      }
+    },
+    "official": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/official_419693.json",
+      "result_sha256": "b2da4546c267e3a3b2184ae2fbc7ffa54733ac85b4e9bfa00ef1535fc4bac6f3",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/official_419693_samples/hellaswag.jsonl",
+          "sha256": "c3929734f486e23cfa46025f069cfacd46d39727130d5fb634083ac5d749e716"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/official_419693_samples/winogrande.jsonl",
+          "sha256": "651bde84ba37b04e50b407b7271e921d3072c2b7028070198969cbae6744aab6"
+        }
+      }
+    },
+    "selector_alpha1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/selector_alpha1_419696.json",
+      "result_sha256": "d00b39544052339d212905c0f13f176d4cda8859f49d808b6557a7127aa9bc3b",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/selector_alpha1_419696_samples/hellaswag.jsonl",
+          "sha256": "d5c5ecc8020240ae211bf71b6d89da8588245ec5162ea98f101d29a47be2318f"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/selector_alpha1_419696_samples/winogrande.jsonl",
+          "sha256": "912fdb121f4a268ad10e05ea4452144504a38beec646ece5518905a76de8f082"
+        }
+      }
+    },
+    "ulp_v1": {
+      "checkpoint": {
+        "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f",
+        "manifest_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/manifests/qwen3.6-27b-nvfp4.sha256.json",
+        "manifest_sha256": "e8ee68e23f8ed83d251e59a5bc3f9cef77fc7577d7377b14ee1ff0b15e2d0389",
+        "model_path": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4"
+      },
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/ulp_v1_419697.json",
+      "result_sha256": "dbb77f3eb1e03ce9440240e108080a536a477158b66ec302da19be5b55e027be",
+      "sample_artifacts": {
+        "hellaswag": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/ulp_v1_419697_samples/hellaswag.jsonl",
+          "sha256": "a9dabf728f9b3137886276c12865129384498067d71a6c5cfb833a273534cc5e"
+        },
+        "winogrande": {
+          "path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/419692/stage1_mc/ulp_v1_419697_samples/winogrande.jsonl",
+          "sha256": "e574ab9a4830d0f60cff871b66e1f71164b0f5cac789a9c9b8f2cf9b027666f9"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "leaf_tasks": [
+      "hellaswag",
+      "winogrande"
+    ],
+    "mcnemar": {
+      "alternative": "two-sided",
+      "method": "exact_binomial"
+    },
+    "paired_confidence_interval": {
+      "confidence_level": 0.95,
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "mmlu_pro_resampling_unit": "document_within_fixed_category",
+      "resamples": 10000,
+      "seed": 20260718
+    },
+    "pairing_key": [
+      "leaf_task",
+      "doc_id",
+      "filter"
+    ],
+    "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/protocols/accuracy_expand_v2.json",
+    "requested_tasks": [
+      "hellaswag",
+      "winogrande"
+    ],
+    "screening_margin_vs_normal_a8": -0.05,
+    "sha256": "77333f869b16d8f29c49f0338594adbc92ae788d02dc6759434d444a737b7b3d",
+    "suite": "stage1_mc",
+    "supporting_files": {}
+  },
+  "sample_pairing": {
+    "cross_arm_checkpoint_match": true,
+    "cross_arm_identity_sha256": "5c5e44bebd89dace747e26fce58edea695f961ad2a0e67fc560aa3d54a7c48ef",
+    "cross_arm_module_paths_match": true,
+    "cross_arm_runtime_versions_match": true,
+    "cross_arm_sample_match": true,
+    "cross_arm_task_config_match_after_callable_address_normalization": true,
+    "pairs": 1024,
+    "source": {
+      "policy": "all_six_arms_exact_source_identity",
+      "prospective_stage_exact_match": true
+    }
+  },
+  "schema_version": 1,
+  "scientific_decision": {
+    "all_screening_checks_passed": true,
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "no_result_dependent_arm_dropping_authorized": true,
+    "post_confirmation_sensitivity": false,
+    "prospective_stage": true,
+    "screening_checks_vs_normal_a8": {
+      "alpha_0960": true,
+      "fpma_default": true,
+      "selector_alpha1": true,
+      "ulp_v1": true
+    },
+    "suite": "stage1_mc"
+  },
+  "status": "analysis_completed"
+}

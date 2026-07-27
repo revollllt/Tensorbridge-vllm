@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "format": "tensorbridge_accuracy_confirmation_protocol",
+  "created_before_confirmation_runs": true,
+  "checkpoint": {
+    "repo_id": "nvidia/Qwen3.6-27B-NVFP4",
+    "revision": "0893e1606ff3d5f97a441f405d5fc541a6bdf404",
+    "content_sha256": "4ec0960247ca03fd10a9883d20de08d3795760ac1043fe7a9db6151b4074203f"
+  },
+  "arms": [
+    "official",
+    "normal_a8",
+    "fpma_default",
+    "ulp_v1"
+  ],
+  "primary_candidate": "fpma_default",
+  "exploratory_candidate": "ulp_v1",
+  "tasks": {
+    "confirm_mc": {
+      "task": "tensorbridge_arc_challenge_confirm",
+      "benchmark": "ARC-Challenge",
+      "dataset_revision": "210d026faf9955653af8916fad021475a3f00453",
+      "datasets_fingerprint": "a4361c3f3e560fcd",
+      "canonical_jsonl_sha256": "6f763973e8abb704484d01687eb7b193dd6ec7a5e9399bacb71e33d4eb07a0f2",
+      "evaluation_docs": 1172,
+      "primary_analysis_doc_ids": "16..1171",
+      "primary_analysis_docs": 1156,
+      "excluded_development_doc_ids": "0..15",
+      "primary_metric": "acc_norm",
+      "secondary_metric": "acc",
+      "bootstrap_iters": 0,
+      "chat_template": false
+    },
+    "confirm_generation": {
+      "task": "tensorbridge_gsm8k_relative_smoke",
+      "sample_manifest": "vllm/plugins/tensorbridge_evaluation/samples/gsm8k_test_sha256_rank_128.json",
+      "sample_manifest_sha256": "37bca36cf4be344ed07209b2caa76688969ac20664f3ad4e263409296455f2df",
+      "samples": 128,
+      "excluded_development_doc_ids": "0..15",
+      "primary_metric": "exact_match,final-answer",
+      "format_metric": "postprocessed_final_answer_parse_rate",
+      "valid_format_regex": "(?m)^The answer is (-?[0-9][0-9,]*(?:\\.[0-9]+)?)\\.?\\s*\\Z",
+      "invalid_or_truncated_generation_is_incorrect": true,
+      "bootstrap_iters": 0,
+      "chat_template": true,
+      "thinking": false,
+      "temperature": 0.0,
+      "max_gen_toks": 1024
+    }
+  },
+  "comparisons": {
+    "primary": "fpma_default - normal_a8",
+    "activation_quantization_control": "normal_a8 - official",
+    "exploratory_ulp_vs_default": "ulp_v1 - fpma_default",
+    "exploratory_ulp_vs_normal": "ulp_v1 - normal_a8"
+  },
+  "analysis": {
+    "paired": true,
+    "noninferiority_decision": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "paired_confidence_interval": {
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "confidence_level": 0.95,
+      "resamples": 10000,
+      "seed": 20260717
+    },
+    "mcnemar": {
+      "method": "exact_binomial",
+      "alternative": "two-sided"
+    },
+    "report": [
+      "candidate_loss_flips",
+      "candidate_gain_flips",
+      "paired_accuracy_delta",
+      "exact_mcnemar_p_value",
+      "paired_confidence_interval",
+      "format_valid_rate"
+    ],
+    "invalid_generation_is_incorrect": true,
+    "do_not_drop_ambiguous_or_discordant_samples": true
+  },
+  "noninferiority_margins": {
+    "arc_challenge_acc_norm_vs_normal_a8": -0.02,
+    "gsm8k_exact_match_vs_normal_a8": -0.05
+  },
+  "format_gate": {
+    "gsm8k_min_valid": 127,
+    "gsm8k_total": 128
+  },
+  "stop_after_confirmation": true,
+  "deferred_tasks": [
+    "hellaswag",
+    "winogrande",
+    "mmlu_pro",
+    "full_gsm8k"
+  ]
+}

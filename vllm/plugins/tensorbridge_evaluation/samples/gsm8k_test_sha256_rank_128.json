@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "format": "tensorbridge_lm_eval_sample_manifest",
+  "dataset": {
+    "path": "openai/gsm8k",
+    "name": "main",
+    "split": "test",
+    "size": 1319,
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "datasets_fingerprint": "59ec1b7f9357c7a2",
+    "canonicalization": "sorted_minified_utf8_jsonl_with_doc_id_v1",
+    "canonical_jsonl_sha256": "f788a609d63ba8cbe610b0e64994033027d559c435775af0e471bb10ec1ee326"
+  },
+  "selection": {
+    "algorithm": "sha256_rank_v1",
+    "candidate_start": 16,
+    "namespace": "tensorbridge-gsm8k-confirm-v1",
+    "count": 128,
+    "ids_sha256": "a43574fc29a99293c793b08c17a02b720cd4f9487e9fd33ef299515903924fc2",
+    "selected_docs_sha256": "4cba37cf8fc51ba80de102927527591be096d2f4e1c0694ea6f7ddefd5c13c78"
+  },
+  "tasks": {
+    "tensorbridge_gsm8k_relative_smoke": [
+      24, 31, 32, 38, 46, 47, 52, 63, 73, 86, 91, 116, 117, 120, 140, 155,
+      173, 180, 189, 215, 218, 227, 263, 281, 288, 298, 305, 310, 311, 314, 319, 320,
+      328, 329, 335, 350, 373, 417, 435, 458, 459, 465, 474, 484, 493, 494, 499, 501,
+      504, 506, 510, 519, 523, 557, 564, 572, 574, 599, 601, 604, 606, 607, 614, 622,
+      637, 638, 643, 658, 676, 680, 682, 688, 701, 704, 706, 707, 720, 725, 745, 770,
+      778, 779, 786, 795, 819, 823, 846, 847, 851, 852, 864, 873, 883, 936, 971, 981,
+      986, 1016, 1026, 1029, 1058, 1061, 1063, 1082, 1084, 1103, 1110, 1111, 1114, 1122, 1135, 1146,
+      1160, 1163, 1166, 1181, 1185, 1191, 1212, 1235, 1247, 1268, 1270, 1274, 1293, 1294, 1297, 1309
+    ]
+  }
+}

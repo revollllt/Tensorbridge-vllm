@@ -1,0 +1,862 @@
+{
+  "arms": {
+    "fpma_default": {
+      "analysis_metrics": {
+        "acc": {
+          "accuracy": 0.6055363321799307,
+          "correct": 700,
+          "total": 1156
+        },
+        "acc_norm": {
+          "accuracy": 0.6124567474048442,
+          "correct": 708,
+          "total": 1156
+        }
+      },
+      "full_evaluation_metrics": {
+        "acc": {
+          "accuracy": 0.6049488054607508,
+          "correct": 709,
+          "total": 1172
+        },
+        "acc_norm": {
+          "accuracy": 0.6100682593856656,
+          "correct": 715,
+          "total": 1172
+        }
+      }
+    },
+    "normal_a8": {
+      "analysis_metrics": {
+        "acc": {
+          "accuracy": 0.6115916955017301,
+          "correct": 707,
+          "total": 1156
+        },
+        "acc_norm": {
+          "accuracy": 0.6228373702422145,
+          "correct": 720,
+          "total": 1156
+        }
+      },
+      "full_evaluation_metrics": {
+        "acc": {
+          "accuracy": 0.6100682593856656,
+          "correct": 715,
+          "total": 1172
+        },
+        "acc_norm": {
+          "accuracy": 0.6203071672354948,
+          "correct": 727,
+          "total": 1172
+        }
+      }
+    },
+    "official": {
+      "analysis_metrics": {
+        "acc": {
+          "accuracy": 0.6098615916955017,
+          "correct": 705,
+          "total": 1156
+        },
+        "acc_norm": {
+          "accuracy": 0.629757785467128,
+          "correct": 728,
+          "total": 1156
+        }
+      },
+      "full_evaluation_metrics": {
+        "acc": {
+          "accuracy": 0.6092150170648464,
+          "correct": 714,
+          "total": 1172
+        },
+        "acc_norm": {
+          "accuracy": 0.6271331058020477,
+          "correct": 735,
+          "total": 1172
+        }
+      }
+    },
+    "ulp_v1": {
+      "analysis_metrics": {
+        "acc": {
+          "accuracy": 0.6072664359861591,
+          "correct": 702,
+          "total": 1156
+        },
+        "acc_norm": {
+          "accuracy": 0.6185121107266436,
+          "correct": 715,
+          "total": 1156
+        }
+      },
+      "full_evaluation_metrics": {
+        "acc": {
+          "accuracy": 0.606655290102389,
+          "correct": 711,
+          "total": 1172
+        },
+        "acc_norm": {
+          "accuracy": 0.6160409556313993,
+          "correct": 722,
+          "total": 1172
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "fpma_default_vs_normal_a8": {
+      "all_required_gates_passed": true,
+      "baseline": "normal_a8",
+      "candidate": "fpma_default",
+      "format_gate": null,
+      "metrics": {
+        "acc": {
+          "baseline_accuracy": 0.6115916955017301,
+          "candidate_accuracy": 0.6055363321799307,
+          "candidate_gain_flip_doc_ids": [
+            116,
+            150,
+            152,
+            208,
+            221,
+            334,
+            367,
+            368,
+            432,
+            561,
+            572,
+            651,
+            808,
+            903,
+            999,
+            1010,
+            1075,
+            1093
+          ],
+          "candidate_gain_flips": 18,
+          "candidate_loss_flip_doc_ids": [
+            58,
+            110,
+            204,
+            209,
+            240,
+            287,
+            296,
+            304,
+            328,
+            350,
+            352,
+            437,
+            461,
+            480,
+            554,
+            576,
+            686,
+            690,
+            764,
+            784,
+            842,
+            917,
+            938,
+            980,
+            1015
+          ],
+          "candidate_loss_flips": 25,
+          "concordant_both_correct": 682,
+          "concordant_both_incorrect": 431,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 43,
+            "method": "exact_binomial",
+            "p_value": 0.3603776529357674
+          },
+          "paired_accuracy_delta": -0.006055363321799308,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.01730103806228374,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.005190311418685121
+          },
+          "samples": 1156
+        },
+        "acc_norm": {
+          "baseline_accuracy": 0.6228373702422145,
+          "candidate_accuracy": 0.6124567474048442,
+          "candidate_gain_flip_doc_ids": [
+            18,
+            26,
+            50,
+            53,
+            116,
+            122,
+            129,
+            221,
+            268,
+            408,
+            409,
+            467,
+            521,
+            620,
+            672,
+            696,
+            719,
+            750,
+            911,
+            937,
+            964,
+            965,
+            1001,
+            1064,
+            1093
+          ],
+          "candidate_gain_flips": 25,
+          "candidate_loss_flip_doc_ids": [
+            127,
+            154,
+            161,
+            199,
+            204,
+            242,
+            290,
+            328,
+            350,
+            378,
+            389,
+            411,
+            443,
+            444,
+            461,
+            475,
+            538,
+            548,
+            552,
+            618,
+            655,
+            687,
+            713,
+            734,
+            762,
+            763,
+            788,
+            851,
+            874,
+            901,
+            944,
+            948,
+            958,
+            967,
+            985,
+            1037,
+            1171
+          ],
+          "candidate_loss_flips": 37,
+          "concordant_both_correct": 683,
+          "concordant_both_incorrect": 411,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 62,
+            "method": "exact_binomial",
+            "p_value": 0.16188140552559765
+          },
+          "noninferiority": {
+            "confidence_interval_is_not_a_gate": true,
+            "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+            "margin": -0.02,
+            "point_estimate_gate_passed": true
+          },
+          "paired_accuracy_delta": -0.010380622837370242,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.023356401384083045,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.0034602076124567475
+          },
+          "samples": 1156
+        }
+      },
+      "noninferiority_check_applies": true,
+      "required_for_primary_confirmation": true,
+      "role": "primary",
+      "threshold_and_format_checks_passed": true
+    },
+    "normal_a8_vs_official": {
+      "all_required_gates_passed": null,
+      "baseline": "official",
+      "candidate": "normal_a8",
+      "format_gate": null,
+      "metrics": {
+        "acc": {
+          "baseline_accuracy": 0.6098615916955017,
+          "candidate_accuracy": 0.6115916955017301,
+          "candidate_gain_flip_doc_ids": [
+            110,
+            204,
+            480,
+            554,
+            613,
+            690,
+            691,
+            842,
+            917,
+            980
+          ],
+          "candidate_gain_flips": 10,
+          "candidate_loss_flip_doc_ids": [
+            116,
+            187,
+            221,
+            405,
+            408,
+            572,
+            933,
+            1075
+          ],
+          "candidate_loss_flips": 8,
+          "concordant_both_correct": 697,
+          "concordant_both_incorrect": 441,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 18,
+            "method": "exact_binomial",
+            "p_value": 0.8145294189453125
+          },
+          "paired_accuracy_delta": 0.0017301038062283738,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.005190311418685121,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.00865051903114187
+          },
+          "samples": 1156
+        },
+        "acc_norm": {
+          "baseline_accuracy": 0.629757785467128,
+          "candidate_accuracy": 0.6228373702422145,
+          "candidate_gain_flip_doc_ids": [
+            136,
+            177,
+            242,
+            267,
+            290,
+            344,
+            378,
+            623,
+            763,
+            855,
+            958,
+            1112
+          ],
+          "candidate_gain_flips": 12,
+          "candidate_loss_flip_doc_ids": [
+            26,
+            116,
+            122,
+            169,
+            193,
+            221,
+            264,
+            342,
+            408,
+            409,
+            429,
+            467,
+            620,
+            672,
+            744,
+            869,
+            937,
+            946,
+            1083,
+            1129
+          ],
+          "candidate_loss_flips": 20,
+          "concordant_both_correct": 708,
+          "concordant_both_incorrect": 416,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 32,
+            "method": "exact_binomial",
+            "p_value": 0.21532714972272515
+          },
+          "paired_accuracy_delta": -0.006920415224913495,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.01643598615916955,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.0025951557093425604
+          },
+          "samples": 1156
+        }
+      },
+      "noninferiority_check_applies": false,
+      "required_for_primary_confirmation": false,
+      "role": "activation_quantization_control",
+      "threshold_and_format_checks_passed": null
+    },
+    "ulp_v1_vs_fpma_default": {
+      "all_required_gates_passed": null,
+      "baseline": "fpma_default",
+      "candidate": "ulp_v1",
+      "format_gate": null,
+      "metrics": {
+        "acc": {
+          "baseline_accuracy": 0.6055363321799307,
+          "candidate_accuracy": 0.6072664359861591,
+          "candidate_gain_flip_doc_ids": [
+            58,
+            110,
+            185,
+            187,
+            204,
+            209,
+            240,
+            287,
+            304,
+            328,
+            350,
+            352,
+            359,
+            408,
+            437,
+            492,
+            554,
+            576,
+            686,
+            842,
+            917,
+            933,
+            938,
+            993,
+            1015,
+            1029
+          ],
+          "candidate_gain_flips": 26,
+          "candidate_loss_flip_doc_ids": [
+            21,
+            150,
+            152,
+            338,
+            367,
+            431,
+            432,
+            435,
+            436,
+            588,
+            613,
+            638,
+            651,
+            662,
+            691,
+            714,
+            720,
+            808,
+            903,
+            909,
+            999,
+            1003,
+            1093,
+            1108
+          ],
+          "candidate_loss_flips": 24,
+          "concordant_both_correct": 676,
+          "concordant_both_incorrect": 430,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 50,
+            "method": "exact_binomial",
+            "p_value": 0.887724827340783
+          },
+          "paired_accuracy_delta": 0.0017301038062283738,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.010380622837370242,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.01384083044982699
+          },
+          "samples": 1156
+        },
+        "acc_norm": {
+          "baseline_accuracy": 0.6124567474048442,
+          "candidate_accuracy": 0.6185121107266436,
+          "candidate_gain_flip_doc_ids": [
+            22,
+            77,
+            127,
+            154,
+            169,
+            204,
+            245,
+            264,
+            290,
+            328,
+            350,
+            368,
+            389,
+            407,
+            411,
+            444,
+            457,
+            475,
+            538,
+            548,
+            552,
+            618,
+            655,
+            687,
+            702,
+            713,
+            734,
+            762,
+            780,
+            851,
+            869,
+            874,
+            901,
+            944,
+            946,
+            948,
+            993,
+            1005,
+            1037,
+            1171
+          ],
+          "candidate_gain_flips": 40,
+          "candidate_loss_flip_doc_ids": [
+            18,
+            21,
+            50,
+            53,
+            81,
+            92,
+            122,
+            166,
+            244,
+            267,
+            318,
+            409,
+            435,
+            436,
+            521,
+            588,
+            696,
+            714,
+            719,
+            733,
+            745,
+            750,
+            818,
+            855,
+            897,
+            911,
+            964,
+            965,
+            1003,
+            1064,
+            1093,
+            1108,
+            1112
+          ],
+          "candidate_loss_flips": 33,
+          "concordant_both_correct": 675,
+          "concordant_both_incorrect": 408,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 73,
+            "method": "exact_binomial",
+            "p_value": 0.4827885568440213
+          },
+          "paired_accuracy_delta": 0.006055363321799308,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.00865051903114187,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.020761245674740483
+          },
+          "samples": 1156
+        }
+      },
+      "noninferiority_check_applies": false,
+      "required_for_primary_confirmation": false,
+      "role": "exploratory_ulp_vs_default",
+      "threshold_and_format_checks_passed": null
+    },
+    "ulp_v1_vs_normal_a8": {
+      "all_required_gates_passed": null,
+      "baseline": "normal_a8",
+      "candidate": "ulp_v1",
+      "format_gate": null,
+      "metrics": {
+        "acc": {
+          "baseline_accuracy": 0.6115916955017301,
+          "candidate_accuracy": 0.6072664359861591,
+          "candidate_gain_flip_doc_ids": [
+            116,
+            185,
+            187,
+            208,
+            221,
+            334,
+            359,
+            368,
+            408,
+            492,
+            561,
+            572,
+            933,
+            993,
+            1010,
+            1029,
+            1075
+          ],
+          "candidate_gain_flips": 17,
+          "candidate_loss_flip_doc_ids": [
+            21,
+            296,
+            338,
+            431,
+            435,
+            436,
+            461,
+            480,
+            588,
+            613,
+            638,
+            662,
+            690,
+            691,
+            714,
+            720,
+            764,
+            784,
+            909,
+            980,
+            1003,
+            1108
+          ],
+          "candidate_loss_flips": 22,
+          "concordant_both_correct": 685,
+          "concordant_both_incorrect": 432,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 39,
+            "method": "exact_binomial",
+            "p_value": 0.5223973804968409
+          },
+          "paired_accuracy_delta": -0.004325259515570935,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.014705882352941176,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.006055363321799308
+          },
+          "samples": 1156
+        },
+        "acc_norm": {
+          "baseline_accuracy": 0.6228373702422145,
+          "candidate_accuracy": 0.6185121107266436,
+          "candidate_gain_flip_doc_ids": [
+            22,
+            26,
+            77,
+            116,
+            129,
+            169,
+            221,
+            245,
+            264,
+            268,
+            368,
+            407,
+            408,
+            457,
+            467,
+            620,
+            672,
+            702,
+            780,
+            869,
+            937,
+            946,
+            993,
+            1001,
+            1005
+          ],
+          "candidate_gain_flips": 25,
+          "candidate_loss_flip_doc_ids": [
+            21,
+            81,
+            92,
+            161,
+            166,
+            199,
+            242,
+            244,
+            267,
+            318,
+            378,
+            435,
+            436,
+            443,
+            461,
+            588,
+            714,
+            733,
+            745,
+            763,
+            788,
+            818,
+            855,
+            897,
+            958,
+            967,
+            985,
+            1003,
+            1108,
+            1112
+          ],
+          "candidate_loss_flips": 30,
+          "concordant_both_correct": 690,
+          "concordant_both_incorrect": 411,
+          "exact_mcnemar": {
+            "alternative": "two-sided",
+            "discordant": 55,
+            "method": "exact_binomial",
+            "p_value": 0.5900533317766357
+          },
+          "noninferiority": {
+            "confidence_interval_is_not_a_gate": true,
+            "decision_rule": "paired_point_estimate_delta_greater_than_or_equal_to_margin",
+            "margin": -0.02,
+            "point_estimate_gate_passed": true
+          },
+          "paired_accuracy_delta": -0.004325259515570935,
+          "paired_confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.01730103806228374,
+            "method": "paired_nonparametric_bootstrap_percentile",
+            "quantile_interpolation": "linear_type7",
+            "resamples": 10000,
+            "seed": 20260717,
+            "upper": 0.00865051903114187
+          },
+          "samples": 1156
+        }
+      },
+      "noninferiority_check_applies": true,
+      "required_for_primary_confirmation": false,
+      "role": "exploratory_ulp_vs_normal",
+      "threshold_and_format_checks_passed": true
+    }
+  },
+  "format": "tensorbridge_nvfp4_lm_confirmation_analysis",
+  "inputs": {
+    "fpma_default": {
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/fpma_default_417992.json",
+      "result_sha256": "e1d7b64ff726691349f365a02d6a1cd8eb81c7bd2eade0fabbea2ee05e8d1172",
+      "sample_artifact_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/fpma_default_417992_samples/tensorbridge_arc_challenge_confirm.jsonl",
+      "sample_artifact_sha256": "f776b6d3c5442608983250ad2a34f2cdfff368bb8df7465356f88bc9b57c6175"
+    },
+    "normal_a8": {
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/normal_a8_417991.json",
+      "result_sha256": "26a3f0852f4293e375e7a6f9c259e0fe89f610a34e0b1df2fff07732d82e42bd",
+      "sample_artifact_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/normal_a8_417991_samples/tensorbridge_arc_challenge_confirm.jsonl",
+      "sample_artifact_sha256": "d68e5f89e2831b78a1e869ac8f117735ca0bd593f7ee2a4ab2f54c80b774fc3b"
+    },
+    "official": {
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/official_417990.json",
+      "result_sha256": "f942653e07712c07f19c2cfec485ddb98d9bde9ecdc08688a7f82d312e61b47a",
+      "sample_artifact_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/official_417990_samples/tensorbridge_arc_challenge_confirm.jsonl",
+      "sample_artifact_sha256": "e77cf7fc4f943ce49056ddfcf1fdb9bc7ec8555b831afc71ad5b7ac74eae49fb"
+    },
+    "ulp_v1": {
+      "result_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/ulp_v1_417989.json",
+      "result_sha256": "eaf199176a04f1342d51d2ee075d0591ac466efa76a5ec2fdcc536f2a7a4d2ed",
+      "sample_artifact_path": "/data/user/jzou521/codes/cuda/nvfp4a8/benchmarks/results/lm_eval/417989/confirm_mc/ulp_v1_417989_samples/tensorbridge_arc_challenge_confirm.jsonl",
+      "sample_artifact_sha256": "7a96c9319b06e0ba9881302b9ae23fe7d54983cfa45bac2378e6c2321ec48d9e"
+    }
+  },
+  "protocol": {
+    "analysis_exclude_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "benchmark": "ARC-Challenge",
+    "mcnemar": {
+      "alternative": "two-sided",
+      "method": "exact_binomial"
+    },
+    "noninferiority_margin": -0.02,
+    "paired_confidence_interval": {
+      "confidence_level": 0.95,
+      "method": "paired_nonparametric_bootstrap_percentile",
+      "resamples": 10000,
+      "seed": 20260717
+    },
+    "path": "/data/user/jzou521/codes/cuda/nvfp4a8/tensorbridge/evaluation/protocols/accuracy_confirm_v1.json",
+    "primary_metric": "acc_norm",
+    "secondary_metrics": [
+      "acc"
+    ],
+    "sha256": "3a3ab3a617143b29eb94af5a75316b74f44d66841d2970a85206c4ac091350a2",
+    "suite": "confirm_mc",
+    "task": "tensorbridge_arc_challenge_confirm"
+  },
+  "sample_pairing": {
+    "analysis_doc_ids_sha256": "dc5e8ce06c74f7e9776701db7ac0aab5c9305d4acde1cc38b3a6e68ef5fdc9b1",
+    "analysis_docs": 1156,
+    "cross_arm_checkpoint_match": true,
+    "cross_arm_identity_sha256": "f4f7532b9477cfb51878ba86f2d1f51ccffcf927316af83dba1d24cfd272c125",
+    "cross_arm_match": true,
+    "cross_arm_runtime_versions_match": true,
+    "cross_arm_source_match": true,
+    "evaluation_doc_ids_sha256": "dadf62e9dfe0476f1e1f33b674750a6e66681b7f709a3b7b804202b3d8047932",
+    "evaluation_docs": 1172,
+    "excluded_docs": 16,
+    "filter": "none",
+    "task": "tensorbridge_arc_challenge_confirm"
+  },
+  "schema_version": 1,
+  "scientific_decision": {
+    "confidence_intervals_are_reported_but_not_a_gate": true,
+    "exploratory_ulp_threshold_passed": true,
+    "primary_confirmation_passed": true
+  },
+  "status": "analysis_completed"
+}
