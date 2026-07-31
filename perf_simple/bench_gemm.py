@@ -44,6 +44,13 @@ DEFAULT_SHAPES = "34816,5120 5120,17408 6144,4096 2048,6144"
 
 LABELS = ("official", "normal_a8", "tensorbridge")
 
+# with_quant is what production runs today. gemm_only hands the kernel an
+# activation that is already FP8, which is what the layer would cost if the
+# quantisation were fused into whatever produces the activation. Marlin is
+# W4A16 and has no such step, so it is identical in both modes and acts as a
+# control on the difference.
+MODES = ("with_quant", "gemm_only")
+
 # TensorBridge's implicit analytic alpha (123/128) was derived only over the
 # verified nonzero raw E4M3 scale domain, and the plugin fails closed outside it
 # rather than extrapolating. Block scales are drawn as raw bytes in that range so
@@ -67,7 +74,14 @@ def random_nvfp4_weights(torch, n: int, k: int):
 
 
 def build_plugin_arm(torch, arm: str, n: int, k: int, dtype, weights):
-    """Instantiate one plugin linear method and return its `apply` closure."""
+    """Build one plugin linear method; return its with-quant and GEMM-only calls.
+
+    Both arms quantise activations to FP8 inside `apply`. That cost is real
+    today but it is a separate elementwise pass over the activation, and fusing
+    it into the kernel that produces the activation would remove it. The
+    GEMM-only closure hands the kernel an already-quantised input so the two
+    numbers bracket what this layer costs before and after such a fusion.
+    """
     from vllm.plugins.tensorbridge import (
         TensorBridgeNormalA8LinearMethod,
         TensorBridgeNvfp4LinearMethod,
@@ -99,11 +113,47 @@ def build_plugin_arm(torch, arm: str, n: int, k: int, dtype, weights):
     for name, value in weights.items():
         getattr(layer, name).data.copy_(value)
     method.process_weights_after_loading(layer)
-    return lambda x: method.apply(layer, x)
+
+    def with_quant(x):
+        return method.apply(layer, x)
+
+    def build_gemm_only(x):
+        """Pre-quantise once, then close over the result."""
+        if arm == "tensorbridge":
+            from tensorbridge.api.v1 import TensorBridgeLayerMethod
+
+            # may_quant_input returns its inputs untouched when an input_scale
+            # is supplied, so passing both skips the quantisation kernel while
+            # running exactly the same GEMM.
+            quantised, scale = TensorBridgeLayerMethod.may_quant_input(
+                layer=layer, inputs=x
+            )
+            return lambda: TensorBridgeLayerMethod.forward_layer(
+                layer=layer,
+                inputs=quantised,
+                input_scale=scale,
+                compute_config=method.compute_config,
+            )
+
+        # normal_a8: apply_weights quantises and then calls apply_scaled_mm.
+        # Call the second half directly with a pre-quantised activation.
+        fp8 = method.fp8_linear
+        w, w_s, x_s, x_s_ub = fp8._get_layer_params(layer)
+        quantised, scale = fp8.quant_fp8(x.view(-1, x.shape[-1]), x_s, x_s_ub)
+        return lambda: fp8.apply_scaled_mm(
+            A=quantised, B=w, out_dtype=dtype, As=scale, Bs=w_s,
+            bias=None, output_shape=[x.shape[0], n],
+        )
+
+    return with_quant, build_gemm_only
 
 
 def build_marlin_arm(torch, n: int, k: int, dtype, weights):
-    """`official`: the same code MarlinNvFp4LinearKernel.apply_weights runs."""
+    """`official`: the same code MarlinNvFp4LinearKernel.apply_weights runs.
+
+    Returns the same pair shape as the plugin arms so the caller does not have
+    to special-case it.
+    """
     from vllm.model_executor.layers.quantization.utils.marlin_utils_fp4 import (
         apply_fp4_marlin_linear,
         prepare_fp4_layer_for_marlin,
@@ -118,16 +168,21 @@ def build_marlin_arm(torch, n: int, k: int, dtype, weights):
     layer.weight_global_scale = weights["weight_scale_2"].clone()
     prepare_fp4_layer_for_marlin(layer)
 
-    return lambda x: apply_fp4_marlin_linear(
-        input=x,
-        weight=layer.weight,
-        weight_scale=layer.weight_scale,
-        weight_global_scale=layer.weight_global_scale,
-        workspace=layer.workspace,
-        size_n=n,
-        size_k=k,
-        bias=None,
-    )
+    def call(x):
+        return apply_fp4_marlin_linear(
+            input=x,
+            weight=layer.weight,
+            weight_scale=layer.weight_scale,
+            weight_global_scale=layer.weight_global_scale,
+            workspace=layer.workspace,
+            size_n=n,
+            size_k=k,
+            bias=None,
+        )
+
+    # W4A16 consumes BF16 directly, so there is no quantisation to remove and
+    # the two modes are the same measurement.
+    return call, lambda x: (lambda: call(x))
 
 
 def capture_graph(torch, fn, x, iters: int, warmup: int):
@@ -223,7 +278,7 @@ def main():
         for n, k in shapes:
             torch.manual_seed(args.seed + n * 5 + k * 7)
             weights = random_nvfp4_weights(torch, n, k)
-            fns = {
+            builders = {
                 "official": build_marlin_arm(torch, n, k, dtype, weights),
                 "normal_a8": build_plugin_arm(torch, "normal_a8", n, k, dtype, weights),
                 "tensorbridge": build_plugin_arm(torch, "tensorbridge", n, k, dtype, weights),
@@ -231,51 +286,67 @@ def main():
 
             for m in batch_sizes:
                 x = torch.randn((m, k), dtype=dtype, device="cuda")
-                graphs, capture_errors = {}, {}
+
+                # One key per (arm, mode). Interleaving all six in the palindrome
+                # rather than running the modes as separate sweeps means a drift
+                # cannot land on one mode and not the other.
+                calls = {}
                 for label in LABELS:
+                    with_quant, build_gemm_only = builders[label]
+                    calls[(label, "with_quant")] = lambda _x, f=with_quant: f(_x)
+                    gemm_only = build_gemm_only(x)
+                    calls[(label, "gemm_only")] = lambda _x, f=gemm_only: f()
+
+                graphs, capture_errors = {}, {}
+                for key, call in calls.items():
                     try:
-                        graphs[label] = capture_graph(
-                            torch, fns[label], x, iters=args.iters, warmup=args.warmup
+                        graphs[key] = capture_graph(
+                            torch, call, x, iters=args.iters, warmup=args.warmup
                         )
                     except Exception as error:  # noqa: BLE001
                         # A kernel that cannot be captured is a finding, not a
-                        # crash: record it for that arm and keep the rest.
-                        capture_errors[label] = repr(error)
+                        # crash: record it and keep the rest.
+                        capture_errors["/".join(key)] = repr(error)
 
-                order = [
-                    lab
-                    for lab in (list(LABELS) + list(reversed(LABELS))) * args.rounds
-                    if lab in graphs
-                ]
-                samples: dict[str, list[float]] = {label: [] for label in graphs}
-                for label in order:
-                    samples[label].append(
-                        time_graph_us(torch, graphs[label], args.iters, args.warmup)
+                keys = list(calls)
+                order = [key for key in (keys + keys[::-1]) * args.rounds if key in graphs]
+                samples: dict = {key: [] for key in graphs}
+                for key in order:
+                    samples[key].append(
+                        time_graph_us(torch, graphs[key], args.iters, args.warmup)
                     )
 
-                stats = {label: summarize(values) for label, values in samples.items()}
+                stats = {mode: {} for mode in MODES}
+                for (label, mode), values in samples.items():
+                    stats[mode][label] = summarize(values)
+
                 row = {"M": m, "N": n, "K": k, "stats": stats,
                        "capture_errors": capture_errors, "vs_official": {}}
-                if "official" in stats:
-                    base = stats["official"]
+                for mode in MODES:
+                    table = stats[mode]
+                    if "official" not in table:
+                        continue
+                    base = table["official"]
                     for label in LABELS:
-                        if label == "official" or label not in stats:
+                        if label == "official" or label not in table:
                             continue
-                        delta = stats[label]["median_us"] - base["median_us"]
-                        ci = stats[label]["ci95_us"] + base["ci95_us"]
-                        row["vs_official"][label] = {
+                        delta = table[label]["median_us"] - base["median_us"]
+                        ci = table[label]["ci95_us"] + base["ci95_us"]
+                        row["vs_official"].setdefault(label, {})[mode] = {
                             # Negative means the arm is faster than Marlin.
-                            "gap_pct": (stats[label]["median_us"] / base["median_us"] - 1) * 100,
+                            "gap_pct": (table[label]["median_us"] / base["median_us"] - 1) * 100,
                             "resolvable": abs(delta) > ci,
                         }
                 rows.append(row)
 
-                summary = "  ".join(
-                    f"{lab}={stats[lab]['median_us']:.2f}" for lab in LABELS if lab in stats
-                )
-                print(f"[gemm] N={n:<6} K={k:<6} M={m:<5} {summary}")
-                for label, error in capture_errors.items():
-                    print(f"[gemm]   capture failed for {label}: {error}")
+                parts = []
+                for mode in MODES:
+                    tag = "q" if mode == "with_quant" else "g"
+                    parts += [f"{tag}:{lab}={stats[mode][lab]['median_us']:.2f}"
+                              for lab in LABELS if lab in stats[mode]]
+                print(f"[gemm] N={n:<6} K={k:<6} M={m:<5} " + "  ".join(parts))
+                for key, error in capture_errors.items():
+                    print(f"[gemm]   capture failed for {key}: {error}")
 
                 graphs.clear()
                 torch.cuda.empty_cache()
@@ -301,21 +372,28 @@ def main():
         args.output.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
         print(f"[gemm] wrote {args.output}")
 
-    header = f"\n{'M':>6}{'N':>8}{'K':>8}"
-    for label in LABELS[1:]:
-        header += f"{label + ' vs official':>22}"
-    print(header)
-    for row in rows:
-        line = f"{row['M']:>6}{row['N']:>8}{row['K']:>8}"
+    for mode, title in (
+        ("with_quant", "with activation quantisation (what runs today)"),
+        ("gemm_only", "GEMM only (activation already FP8, i.e. quant fused away)"),
+    ):
+        print(f"\n{title}")
+        header = f"{'M':>6}{'N':>8}{'K':>8}"
         for label in LABELS[1:]:
-            entry = row["vs_official"].get(label)
-            cell = "-" if entry is None else (
-                f"{entry['gap_pct']:+.1f}%" + ("" if entry["resolvable"] else " ~")
-            )
-            line += f"{cell:>22}"
-        print(line)
+            header += f"{label:>16}"
+        print(header)
+        for row in rows:
+            line = f"{row['M']:>6}{row['N']:>8}{row['K']:>8}"
+            for label in LABELS[1:]:
+                entry = row["vs_official"].get(label, {}).get(mode)
+                cell = "-" if entry is None else (
+                    f"{entry['gap_pct']:+.1f}%" + ("" if entry["resolvable"] else " ~")
+                )
+                line += f"{cell:>16}"
+            print(line)
     print("\n  gap vs Marlin inside a CUDA graph; negative = faster.")
     print("  ~ = inside CI95, not resolvable.")
+    print("  Marlin is W4A16, so it is the same measurement in both tables and")
+    print("  the difference between them is the activation quantisation alone.")
 
 
 if __name__ == "__main__":

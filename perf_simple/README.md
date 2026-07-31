@@ -170,66 +170,153 @@ and 16 results.
 
 ### Per-layer GEMM
 
-`bench_gemm.py`, all three arms inside a captured CUDA graph. Gap against
-Marlin; negative means faster.
+`bench_gemm.py`, all three arms inside a captured CUDA graph, in two modes. Gap
+against Marlin; negative means faster; `~` means inside CI95.
+
+`with_quant` is what runs today: `apply` quantises the BF16 activation to FP8 on
+every call. `gemm_only` hands the kernel an activation that is already FP8. That
+step is a separate elementwise pass over the activation, so fusing it into
+whatever produces the activation would remove it; the second table is what this
+layer would cost after such a fusion. Marlin is W4A16 and has no quantisation
+step, so it is the same measurement in both tables and the difference between
+them is the activation quantisation alone.
 
 ```
-     M       N       K      normal_a8   tensorbridge
-     1   34816    5120         +38.5%          -3.5%
-     4   34816    5120         +39.6%          -2.7%
-    16   34816    5120         +33.1%          -1.7%
-    32   34816    5120         +24.1%          -6.7%
-    64   34816    5120         -10.1%         -27.1%
-   128   34816    5120         -49.8%         -53.8%
+with activation quantisation (what runs today)
+     M       N       K       normal_a8    tensorbridge
+     1   34816    5120          +38.9%           -2.3%
+     4   34816    5120          +40.1%           -1.8%
+    16   34816    5120          +34.1%         +0.2% ~
+    32   34816    5120          +23.9%           -6.0%
+    64   34816    5120          -11.1%          -26.7%
+   128   34816    5120          -48.3%          -50.8%
+     1    5120   17408          +51.5%           +8.7%
+     4    5120   17408          +55.5%           +8.9%
+    16    5120   17408          +48.7%           +4.7%
+    32    5120   17408          +27.1%          -15.7%
+    64    5120   17408          -23.2%          -39.5%
+   128    5120   17408          -42.6%          -53.0%
+     1    6144    4096           -4.7%           -2.0%
+     4    6144    4096           -2.6%           -2.6%
+    16    6144    4096          -17.0%           -3.9%
+    32    6144    4096           -8.4%          -17.7%
+    64    6144    4096          -49.3%          -39.4%
+   128    6144    4096          -58.1%          -47.6%
+     1    2048    6144          +11.3%           -8.6%
+     4    2048    6144          +15.8%           -8.3%
+    16    2048    6144         +0.8% ~          -12.2%
+    32    2048    6144          +10.2%          -19.7%
+    64    2048    6144          -32.3%          -37.6%
+   128    2048    6144          -28.9%          -38.7%
 
-     1    5120   17408         +49.6%          +7.4%
-     4    5120   17408         +54.0%          +6.9%
-    16    5120   17408         +45.3%          +3.4%
-    32    5120   17408         +26.8%         -17.7%
-    64    5120   17408         -23.0%         -40.7%
-   128    5120   17408         -42.4%         -53.8%
-
-     1    6144    4096          -4.7%          -2.6%
-     4    6144    4096          -1.1%          -2.4%
-    16    6144    4096         -16.8%          -4.3%
-    32    6144    4096          -7.8%         -18.5%
-    64    6144    4096         -50.4%         -39.9%
-   128    6144    4096         -59.7%         -48.1%
-
-     1    2048    6144         +10.5%          -9.6%
-     4    2048    6144         +17.0%          -9.4%
-    16    2048    6144          -0.7%         -13.5%
-    32    2048    6144         +10.1%         -20.5%
-    64    2048    6144         -33.6%         -38.9%
-   128    2048    6144         -29.7%         -38.5%
+GEMM only (activation already FP8, i.e. quant fused away)
+     M       N       K       normal_a8    tensorbridge
+     1   34816    5120          +31.9%           -7.1%
+     4   34816    5120          +32.2%           -6.6%
+    16   34816    5120          +26.0%           -4.7%
+    32   34816    5120          +17.1%          -10.6%
+    64   34816    5120          -15.8%          -29.6%
+   128   34816    5120          -51.1%          -52.9%
+     1    5120   17408          +26.8%           -2.5%
+     4    5120   17408          +28.2%           -2.1%
+    16    5120   17408          +20.1%           -5.2%
+    32    5120   17408           +3.8%          -24.3%
+    64    5120   17408          -37.7%          -45.9%
+   128    5120   17408          -53.4%          -58.8%
+     1    6144    4096          -28.9%          -16.6%
+     4    6144    4096          -26.4%          -17.5%
+    16    6144    4096          -40.2%          -18.8%
+    32    6144    4096          -27.3%          -29.3%
+    64    6144    4096          -62.6%          -47.5%
+   128    6144    4096          -67.9%          -54.1%
+     1    2048    6144          -19.4%          -26.1%
+     4    2048    6144          -17.9%          -26.2%
+    16    2048    6144          -31.0%          -29.5%
+    32    2048    6144          -18.1%          -35.0%
+    64    2048    6144          -52.2%          -49.2%
+   128    2048    6144          -45.9%          -48.8%
 ```
+
+**Fusing the activation quantisation would make TensorBridge beat Marlin
+everywhere.** With the quantisation in place it still loses on `5120,17408` up
+to M=16 (+8.7% at M=1) and is at parity on `34816,5120` at M=16; without it,
+all 24 of its cells are negative. The two MLP shapes gain 5-11 points at small
+M, which is where the end-to-end crossover sits, so the fusion would move that
+crossover below batch 16 rather than just widening a win it already has.
+
+Dividing the two tables gives what the quantisation actually costs, as a
+fraction of the GEMM it precedes. Marlin is the control: it has no such step, so
+its column is the method's own error bar.
+
+```
+     M       N       K    tensorbridge    normal_a8   marlin (control)
+     1   34816    5120            5.2%         5.3%             0.0%
+   128   34816    5120            4.9%         6.4%             0.5%
+     1    5120   17408           11.0%        19.0%            -0.4%
+   128    5120   17408           13.5%        22.8%            -0.3%
+     1    6144    4096           18.1%        34.6%             0.4%
+   128    6144    4096           13.8%        30.4%            -0.3%
+     1    2048    6144           23.8%        38.1%             0.0%
+   128    2048    6144           19.7%        31.5%            -0.0%
+```
+
+The control stays inside ±0.7% everywhere, so the rest is real. Two things
+follow that the gap tables alone do not show:
+
+- **The cost is roughly flat in M, not amortised away by a bigger batch.** On
+  `5120,17408` it is 11.0% at M=1 and 13.5% at M=128. Waiting for larger batches
+  does not remove it; only fusing does.
+- **It is largest where the weight matrix is smallest** — 5% on the 178M-element
+  `34816,5120` against 24% on the 12.6M-element `2048,6144`. At small M the GEMM
+  is bound by streaming the weights, so a fixed-cost pass over the activation
+  weighs more the less weight there is to stream.
+
+`normal_a8` pays roughly twice the relative cost TensorBridge does across every
+shape. Both quantise the same activation, and an in-graph profile put the two
+quantisation kernels within 3% of each other on GPU time, so this is not
+explained by the quantiser alone and is not chased further here.
 
 The first two shapes are this checkpoint's MLP and predict the end-to-end table:
-`tensorbridge` crosses zero between M=16 and M=32, and the engine crosses between
-batch 16 and 32. End-to-end ratios are smaller than GEMM ratios because the MLP
-is only part of the forward pass — see the profile below.
+with quantisation, `tensorbridge` crosses zero between M=16 and M=32, and the
+engine crosses between batch 16 and 32. End-to-end ratios are smaller than GEMM
+ratios because the MLP is only part of the forward pass — see the profile below.
 
 The other two shapes are not in this checkpoint. They are there so the ranking
 is not read off two matrices that both share a hidden size of 5120 and a very
 wide inner dimension, and they change two conclusions:
 
 - **TensorBridge's small-M weakness is shape-specific, not intrinsic.** At
-  `2048,6144` it already wins 9.6% at M=1. The near-parity at M=1 on the MLP
-  shapes comes from those particular dimensions, so a model with a smaller
-  hidden size would cross over earlier than batch 16.
-- **`normal_a8` overtakes TensorBridge on `6144,4096` at large M** (-50.4% vs
-  -39.9% at M=64). It loses on the other three shapes. Same weights, same
-  activation path — so this is the FPMA mainloop underperforming on that tile
-  configuration, not a quantisation cost, and it is worth chasing.
+  `2048,6144` it already wins 8.6% at M=1 with quantisation, and 26.1% without.
+  The near-parity on the MLP shapes comes from those particular dimensions, so a
+  model with a smaller hidden size would cross over earlier than batch 16.
+- **`normal_a8` overtakes TensorBridge on `6144,4096` at large M** (-49.3% vs
+  -39.4% at M=64) and it survives removing the quantisation (-62.6% vs -47.5%),
+  so it is not a quantisation artefact. It loses on the other three shapes. Same
+  weights, same activation path — the FPMA mainloop underperforms on that tile
+  configuration, and it is worth chasing.
 
 Timing eager launches instead of graph replay inverts most of this. The same
-`tensorbridge` layer at M=1 on `34816,5120` reads +95.3% eager and -3.5% in a
+`tensorbridge` layer at M=1 on `34816,5120` reads +95.3% eager and -2.3% in a
 graph: about 98 points of host launch cost that the engine never pays because
 `FULL_DECODE_ONLY` replays a captured decode step.
 
 ### Where decode time goes
 
-`summarize_profile.py` on a batch-128 profile of the `tensorbridge` arm:
+Profile one arm and group the kernels by GPU time:
+
+```bash
+nsys profile --trace=cuda --sample=none --cpuctxsw=none \
+    --cuda-graph-trace=node --output=prof \
+    python bench_latency.py --arm tensorbridge --model $M \
+        --batch-sizes 128 --iters 1 --warmup 1
+nsys stats --report cuda_gpu_kern_sum --format csv --output prof prof.nsys-rep
+python summarize_profile.py prof_cuda_gpu_kern_sum.csv
+```
+
+`--cuda-graph-trace=node` is load-bearing: without it nsys reports one entry per
+graph launch and every kernel inside the decode graph is invisible.
+
+On a batch-128 profile of the `tensorbridge` arm:
 
 ```
 group                               GPU %    us/call
@@ -260,6 +347,37 @@ writes it, so traffic is linear in batch with no amortisation: 7.0% of GPU time
 at batch 16 becomes 29.1% at batch 128. It is identical in both arms, so it caps
 what any NVFP4 kernel change can deliver — near `1 / (1 - 0.22) ~ 1.28x` at batch
 128 from the GEMM alone.
+
+## What to look at next
+
+Ranked by what the measurements above say is worth the effort.
+
+1. **Fuse the activation quantisation into the kernel that produces the
+   activation.** It costs 5% of the GEMM on `34816,5120`, 11-14% on
+   `5120,17408`, and up to 24% on narrower shapes; it is flat in M, so a bigger
+   batch never amortises it. Removing it turns every TensorBridge cell negative
+   and moves the end-to-end crossover below batch 16. This is the only item here
+   with a quantified payoff and a clear owner.
+2. **`normal_a8` beats TensorBridge on `6144,4096` at large M** (-62.6% vs
+   -47.5% at M=64, GEMM only). It loses on the other three shapes, and the gap
+   survives removing the quantisation, so the FPMA mainloop is underperforming
+   on that tile configuration. TensorBridge's own code, real GPU work.
+3. **Behaviour above M=128 is unmeasured here.** An earlier harness saw
+   TensorBridge lose ground against a CUTLASS W4A8 reference somewhere past
+   M=512, in the same direction on nearly every shape, which would look like a
+   config-selection cliff. That evidence is not reproducible from these scripts;
+   re-test it with `bench_gemm.py --batch-sizes 128,256,512` against Marlin,
+   which is the baseline that matters anyway.
+4. **Elementwise fragmentation**: 31% of GPU time at batch 16 across 400k+ calls
+   averaging 3.5 us. Large in aggregate, but a vLLM fusion question, not a
+   TensorBridge one.
+5. **Gated delta rule occupancy**: it sustains about 45% of HBM peak, so roughly
+   2x of headroom at the largest single cost at batch 128. Also vLLM's model
+   code, and the linear scaling itself is inherent.
+6. ~~Swap TensorBridge's activation quantiser for vLLM's.~~ Closed: an in-graph
+   profile put the two within 3% of each other on GPU time, and the whole step
+   is 1.1% of decode. The 2.6x gap a wall-clock benchmark reports is host launch
+   cost the engine does not pay.
 
 ## Scope
 
