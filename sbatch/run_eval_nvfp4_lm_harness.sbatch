@@ -20,11 +20,11 @@ if [[ ! -x "${PYTHON}" ]]; then
     exit 2
 fi
 
-ARMS=(official normal_a8 fpma_default selector_alpha1 ulp_v1 alpha_0960)
+ARMS=(official normal_a8 fpma_default selector_alpha1 ulp_v1 alpha_0960 alpha_0961)
 SUITE="${LM_EVAL_SUITE:-smoke_mc}"
 if [[ -n "${SLURM_ARRAY_TASK_ID:-}" ]]; then
     if ((SLURM_ARRAY_TASK_ID < 0 || SLURM_ARRAY_TASK_ID >= ${#ARMS[@]})); then
-        echo "[lm-eval] array index must be in 0..5" >&2
+        echo "[lm-eval] array index must be in 0..$((${#ARMS[@]} - 1))" >&2
         exit 2
     fi
     if [[ -n "${LM_EVAL_ARM:-}" || -n "${LM_EVAL_OUTPUT:-}" \
@@ -104,6 +104,12 @@ case "${ARM}" in
         ;;
     alpha_0960)
         CACHE_SEED="${LM_EVAL_ALPHA_0960_CACHE_SEED:-${DEFAULT_ABI_CACHE_SEED}}"
+        EXPECTED_CACHE_SEED_SHA256="f4dfa648fb1c00544671c33780496aac5c8b4372ad36784f63f36361cb02d5b2"
+        ;;
+    alpha_0961)
+        # Alpha scales only the FP32 global scale, so this arm shares the
+        # default FPMA ABI cache seed.
+        CACHE_SEED="${LM_EVAL_ALPHA_0961_CACHE_SEED:-${DEFAULT_ABI_CACHE_SEED}}"
         EXPECTED_CACHE_SEED_SHA256="f4dfa648fb1c00544671c33780496aac5c8b4372ad36784f63f36361cb02d5b2"
         ;;
     ulp_v1)

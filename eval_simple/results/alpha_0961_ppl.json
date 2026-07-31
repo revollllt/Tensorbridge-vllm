@@ -1,0 +1,42 @@
+{
+  "arm": "alpha_0961",
+  "blocking": {
+    "blocks": 291,
+    "max_model_len": 2048,
+    "target_tokens_per_block": 1024,
+    "total_tokens": 297193
+  },
+  "environment": {
+    "TENSORBRIDGE_COMPILER": "nvrtc",
+    "TENSORBRIDGE_NVFP4_ALLOW_SCALE_CLAMP": "0",
+    "TENSORBRIDGE_NVFP4_FPMA_ALPHA": "0.961",
+    "TENSORBRIDGE_NVFP4_FPMA_ULP_CORRECTION": "0",
+    "TENSORBRIDGE_NVFP4_PREFOLD_SELECTOR": "none",
+    "TENSORBRIDGE_STRICT_QWEN36_LAYOUT": "1",
+    "TENSORBRIDGE_VLLM_BACKEND": "tensorbridge",
+    "TOKENIZERS_PARALLELISM": "false",
+    "VLLM_PLUGINS": "tensorbridge",
+    "VLLM_USE_DEEP_GEMM": "0",
+    "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+  },
+  "metrics": {
+    "mean_nll": 1.948225171139416,
+    "nll_sum": 578996.9350612654,
+    "ppl": 7.016223926717263,
+    "scored_tokens": 297192
+  },
+  "model": "/data/user/jzou521/models/nvidia/Qwen3.6-27B-NVFP4",
+  "quant_config_class": "vllm.plugins.tensorbridge.TensorBridgeModelOptMixedConfig",
+  "timing": {
+    "engine_init_seconds": 1429.8125019171275,
+    "generate_seconds": 44.39717745222151
+  },
+  "versions": {
+    "datasets": "4.8.5",
+    "lm_eval": "0.4.11",
+    "tensorbridge-kernels": "0.2.0+g43cc2aa3d9a1",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.9.0",
+    "vllm": "0.20.2+cu128"
+  }
+}

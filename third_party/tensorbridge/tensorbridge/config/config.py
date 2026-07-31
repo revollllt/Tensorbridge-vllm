@@ -1,0 +1,214 @@
+import dataclasses
+import math
+from typing import ClassVar
+
+import torch
+
+from tensorbridge import dtypes
+from tensorbridge.config.base import BaseTensorBridgeConfig
+from tensorbridge.config.enum import GemmType, MmaType, WeightScaleType
+
+
+@dataclasses.dataclass(kw_only=True)
+class LayerConfig(BaseTensorBridgeConfig):
+    # shape config
+    shape_n: int
+    shape_k: int
+    pad_shape_n: int = 0
+    pad_shape_k: int = 0
+    num_experts: int = 0
+
+    # datatype config
+    b_dtype: dtypes.DataType
+    a_dtype: dtypes.DataType
+    c_dtype: dtypes.DataType
+    bs_dtype: dtypes.DataType | None = None
+
+    # quant param config
+    input_scale_group_size: int = 0
+    weight_scale_group_size: int = 0
+    weight_scale_group_size_n: int = 0
+    weight_scale_type: WeightScaleType | None = None
+    use_int_weight_scale: bool = False
+    use_fused_e8m0_scale: bool = False
+    use_fused_e4m3_scale: bool = False
+    use_nvfp4_snc: bool = False
+    use_nvfp4_raw_s2r_deint: bool = False
+    use_nvfp4_swizzle64_raw: bool = False
+    has_zero_point: bool = False
+    is_fp_zero_point: bool = False
+
+    # bias config
+    has_bias: bool = False
+
+    # mma config
+    mma_type: MmaType | None = None
+
+    _cpp_extra_names: ClassVar[tuple[str, ...]] = (
+        "is_channel_weight_scale",
+        "is_block_weight_scale",
+        "is_group_weight_scale",
+        "is_tensor_weight_scale",
+        "has_input_scale",
+    )
+    _name_map: ClassVar[dict[str, str]] = {
+        "use_nvfp4_snc": "kUseNvfp4SNC",
+        "use_nvfp4_raw_s2r_deint": "kUseNvfp4RawS2RDeint",
+        "use_nvfp4_swizzle64_raw": "kUseNvfp4Swizzle64Raw",
+    }
+
+    def __post_init__(self):
+        self.problem_shape = (0, self.shape_n, self.shape_k)
+        self.pad_shape = (0, self.pad_shape_n, self.pad_shape_k)
+
+        if self.bs_dtype is None:
+            self.bs_dtype = self.c_dtype
+
+        if self.weight_scale_type is None:
+            if self.weight_scale_group_size_n > 1:
+                self.weight_scale_type = WeightScaleType.BLOCK
+            elif self.weight_scale_group_size == 0:
+                self.weight_scale_type = WeightScaleType.CHANNEL
+            elif self.weight_scale_group_size > 0:
+                self.weight_scale_type = WeightScaleType.GROUP
+
+        if isinstance(self.weight_scale_type, str):
+            self.weight_scale_type = WeightScaleType(self.weight_scale_type)
+        if self.weight_scale_type is None:
+            if self.weight_scale_group_size == 0:
+                self.weight_scale_type = WeightScaleType.CHANNEL
+            elif self.weight_scale_group_size > 0 and self.weight_scale_group_size_n > 1:
+                self.weight_scale_type = WeightScaleType.BLOCK
+            elif self.weight_scale_group_size > 0:
+                self.weight_scale_type = WeightScaleType.GROUP
+
+        if self.mma_type is None:
+            sm_version = torch.cuda.get_device_capability()[0]
+            self.mma_type = MmaType.WGMMA if sm_version == 9 else MmaType.MMA
+        if isinstance(self.mma_type, str):
+            self.mma_type = MmaType(self.mma_type)
+
+        for name in ["a", "b", "c", "bs"]:
+            value = getattr(self, f"{name}_dtype")
+            if isinstance(value, str):
+                value = dtypes.DataType.from_str(value)
+            setattr(self, f"{name}_dtype", value)
+
+        self.has_input_scale = self.a_dtype.num_bits != 16
+        self.is_channel_weight_scale = self.weight_scale_type == WeightScaleType.CHANNEL
+        self.is_tensor_weight_scale = self.weight_scale_type in [
+            WeightScaleType.TENSOR,
+            WeightScaleType.GROUP_TENSOR,
+        ]
+        self.is_block_weight_scale = self.weight_scale_type == WeightScaleType.BLOCK
+        self.is_group_weight_scale = self.weight_scale_type in [
+            WeightScaleType.GROUP,
+            WeightScaleType.GROUP_TENSOR,
+        ]
+
+
+@dataclasses.dataclass(kw_only=True)
+class ComputeConfig(BaseTensorBridgeConfig):
+    use_f16_accum: bool = False
+    use_batch_invariant: bool = False
+    gemm_type: GemmType | None = None
+
+    _cpp_extra_names: ClassVar[tuple[str, ...]] = (
+        "gemm_type_id",
+        "is_indexed_gemm",
+        "is_grouped_gemm",
+        "is_grouped_contiguous_gemm",
+        "is_grouped_masked_gemm",
+    )
+
+    def __post_init__(self):
+        if isinstance(self.gemm_type, str):
+            self.gemm_type = GemmType(self.gemm_type)
+        self.is_indexed_gemm = self.gemm_type == GemmType.INDEXED
+        self.is_grouped_contiguous_gemm = self.gemm_type == GemmType.GROUPED_CONTIGUOUS
+        self.is_grouped_masked_gemm = self.gemm_type == GemmType.GROUPED_MASKED
+        self.is_grouped_gemm = self.is_grouped_contiguous_gemm or self.is_grouped_masked_gemm
+
+    @property
+    def gemm_type_id(self):
+        assert self.gemm_type is not None
+        value = self.gemm_type.value.lower()
+        return ["dense", "indexed", "grouped_contiguous", "grouped_masked"].index(value)
+
+
+@dataclasses.dataclass(kw_only=True)
+class TuningConfig(BaseTensorBridgeConfig):
+    block_shape: tuple[int, int, int]
+    warp_shape: tuple[int, int, int]
+
+    use_stream_k: bool = True
+
+    num_stages: int = 2
+    num_ctas_per_sm: int = 1
+
+    use_warp_spec: bool | None = None
+    use_mbarrier: bool | None = None
+    use_cp_async: bool | None = None
+
+    use_tma: bool | None = None
+    use_tma_a: bool | None = None
+    use_tma_b: bool | None = None
+    use_tma_c: bool | None = None
+    use_tma_bs: bool | None = None
+    use_tma_bzp: bool | None = None
+    use_tma_bias: bool | None = None
+    # CUTLASS-aligned 2D + Swizzle<2,4,3> = 64B swizzle TMA-B path. Default off.
+    # Only meaningful when use_tma_b=True. Phase 1: flag plumbed but no kernel-side
+    # logic wired; Phase 2 will add the swizzled-SMEM descriptor + S2R formula.
+    use_tma_b_swizzle_64: bool = False
+
+    num_write_splits: int = 1
+    multi_cast_size_a: int = 1
+    multi_cast_size_b: int = 1
+    use_m_fast_tile_order: bool = False
+    use_swapped_large_nvfp4: bool = False
+    use_nvfp4_prefetch_raw_wait3_issue_auto: bool = False
+    warp_spec_producer_regs: int = 0
+    nvfp4_swz64_prebcast_prmt_const_variant: bool = False
+
+    _cpp_extra_names: ClassVar[tuple[str, ...]] = (
+        "num_threads",
+        "num_math_threads",
+        "num_load_threads",
+    )
+
+    _name_map = {
+        "use_mbarrier": "kUseMBarrier",
+        "use_tma_bs": "kUseTmaBS",
+        "use_tma_bzp": "kUseTmaBZP",
+    }
+
+    def __post_init__(self):
+        if self.use_warp_spec is None:
+            self.use_warp_spec = False
+
+        if self.use_tma is None:
+            self.use_tma = False
+
+        if self.use_mbarrier is None:
+            self.use_mbarrier = self.use_tma or self.use_warp_spec
+
+        if self.use_cp_async is None:
+            sm_version = torch.cuda.get_device_capability()
+            self.use_cp_async = sm_version[0] >= 8
+
+        self.num_math_threads = math.prod(self.block_shape) // math.prod(self.warp_shape) * 32
+        if self.use_warp_spec:
+            self.num_load_threads = 128
+            self.num_threads = self.num_math_threads + 128
+        else:
+            self.num_load_threads = self.num_math_threads
+            self.num_threads = self.num_math_threads
+
+        for name in dir(self):
+            if not name.startswith("use_tma_"):
+                continue
+            if not self.use_tma:
+                assert getattr(self, name) is not True
+            if getattr(self, name) is None:
+                setattr(self, name, self.use_tma)

@@ -211,6 +211,7 @@ def test_arm_contracts_are_fixed():
         "selector_alpha1": ("tensorbridge", 1.0, "normal_b8_sse", False),
         "ulp_v1": ("tensorbridge", 1.0, "none", True),
         "alpha_0960": ("tensorbridge", 0.960, "none", False),
+        "alpha_0961": ("tensorbridge", 0.961, "none", False),
     }
     assert {
         key: (arm.backend, arm.alpha, arm.selector, arm.ulp_correction)

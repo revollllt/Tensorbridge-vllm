@@ -596,3 +596,37 @@ def test_triton_cache_is_process_scoped(monkeypatch, tmp_path):
     resolved = tmp_path / f"pid_{integration.os.getpid()}"
     assert integration.os.environ["TRITON_CACHE_DIR"] == str(resolved)
     assert resolved.is_dir()
+
+
+def test_zero_groups_below_prefold_floor_drops_group_and_scale():
+    # Two groups of 16 nibble-weights: one legal scale, one under the 0x1C floor.
+    scales = torch.tensor([0x40, 0x10], dtype=torch.uint8).view(torch.float8_e4m3fn)
+    weights = torch.tensor([0x11111111, 0x22222222, 0x33333333, 0x44444444],
+                           dtype=torch.int32)
+    dropped = integration._zero_groups_below_prefold_floor(weights, scales)
+
+    assert dropped == 1
+    raw = scales.view(torch.uint8)
+    assert raw.tolist() == [0x40, 0]
+    # The legal group is untouched; the dropped group loses its weights too,
+    # because a zero scale alone still emits `0 + addend` in the mainloop.
+    assert weights.tolist() == [0x11111111, 0x22222222, 0, 0]
+
+
+def test_zero_groups_below_prefold_floor_is_a_noop_in_domain():
+    scales = torch.tensor([0x39, 0x7E, 0x1C], dtype=torch.uint8).view(torch.float8_e4m3fn)
+    weights = torch.arange(1, 7, dtype=torch.int32)
+    before = weights.clone()
+
+    assert integration._zero_groups_below_prefold_floor(weights, scales) == 0
+    assert torch.equal(weights, before)
+    assert scales.view(torch.uint8).tolist() == [0x39, 0x7E, 0x1C]
+
+
+def test_zero_groups_below_prefold_floor_keeps_true_zero_groups():
+    # raw == 0 is the kernel's existing all-zero convention, not an underflow.
+    scales = torch.tensor([0x00, 0x50], dtype=torch.uint8).view(torch.float8_e4m3fn)
+    weights = torch.tensor([0, 0, 0x55555555, 0x66666666], dtype=torch.int32)
+
+    assert integration._zero_groups_below_prefold_floor(weights, scales) == 0
+    assert weights.tolist() == [0, 0, 0x55555555, 0x66666666]

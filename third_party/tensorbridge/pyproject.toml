@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tensorbridge-kernels"
+dynamic = ["version"]
+description = "TensorBridge NVFP4A8 CUDA kernels for Hopper GPUs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "triton",
+    "safetensors",
+    "jinja2",
+    "pyelftools",
+    "nvidia-ml-py",
+]
+
+[project.optional-dependencies]
+cu12 = [
+    "nvidia-cuda-runtime-cu12",
+    "nvidia-cuda-cccl-cu12",
+    "nvidia-cuda-nvcc-cu12",
+    "nvidia-cuda-nvrtc-cu12",
+    "cuda-python>=12,<13",
+]
+cu13 = [
+    "nvidia-cuda-runtime",
+    "nvidia-cuda-cccl",
+    "nvidia-cuda-nvcc",
+    "nvidia-cuda-nvrtc",
+    "cuda-python>=13,<14",
+]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tensorbridge", "tensorbridge.*"]
+exclude = ["tests", "tests.*", "scripts", "scripts.*", "cute_cutlass_nvfp4a8", "cute_cutlass_nvfp4a8.*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+tensorbridge = [
+    "csrc/launcher/*.cpp",
+    "csrc/launcher/*.h",
+    "include/**/*.cuh",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+disable_error_code = ["no-untyped-call", "no-untyped-def", "type-arg", "untyped-decorator", "no-any-return"]
+ignore_missing_imports = true

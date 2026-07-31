@@ -121,6 +121,16 @@ ARMS = {
             "none",
             False,
         ),
+        # Forward analytic_v1 runtime default (123/128). Added after the frozen
+        # six-arm v1/v2 protocols; it is not part of either evidence set.
+        ArmConfig(
+            "alpha_0961",
+            "tensorbridge_analytic_alpha_0_961",
+            "tensorbridge",
+            0.961,
+            "none",
+            False,
+        ),
     )
 }
 
@@ -1700,12 +1710,19 @@ def write_sample_artifacts(
 
 
 def _run_git(path: Path, *args: str) -> str | None:
-    process = subprocess.run(
-        ["git", "-C", str(path), *args],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
-        check=False,
-    )
+    try:
+        process = subprocess.run(
+            ["git", "-C", str(path), *args],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+    except OSError:
+        # Some compute nodes have no git on PATH once the module environment is
+        # purged. git_provenance already treats None as "unavailable", so let it
+        # take that path instead of killing a run that has nothing to do with git.
+        # source_tree_sha256 hashes files directly and still detects edits.
+        return None
     if process.returncode != 0:
         return None
     return process.stdout.decode("utf-8", errors="replace")

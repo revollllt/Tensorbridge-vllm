@@ -102,6 +102,46 @@ def _ulp_correction_enabled() -> bool:
     return value == "1"
 
 
+FPMA_PREFOLD_FLOOR = 0x1C
+
+
+def _zero_groups_below_prefold_floor(
+    weight_words: torch.Tensor, weight_scale: torch.Tensor, group_size: int = 16
+) -> int:
+    """Zero NVFP4 groups whose E4M3 scale sits below the FPMA prefold floor.
+
+    The bridge encodes `prefolded_scale = raw - 0x1C`, so a scale under 0x1C has
+    no representation at all. Such a group carries less than about 0.094 of the
+    tensor scale; dropping it costs a little signal, whereas clamping it up to
+    the floor -- the kernel's other option -- would inflate every weight in that
+    group by up to 12x and inject magnitude that was never in the checkpoint.
+
+    Zeroing the scale alone would not do it. The mainloop computes
+    `scale_byte + addend`, so a zero scale still emits the addend as a small
+    nonzero value; the weight nibbles have to go too. That is why the kernel
+    already pairs the two for groups that arrive with `raw == 0`, and rewriting
+    these groups into that form lets the normal path handle them.
+
+    Returns the number of groups zeroed, for the caller to record.
+    """
+    raw = weight_scale.view(torch.uint8)
+    below = (raw != 0) & (raw < FPMA_PREFOLD_FLOOR)
+    count = int(below.sum().item())
+    if count == 0:
+        return 0
+
+    # 16 four-bit weights per group is two int32 words.
+    group_words = group_size * 4 // 32
+    if weight_words.numel() != raw.numel() * group_words:
+        raise ValueError(
+            f"weight/scale shape mismatch: {weight_words.numel()} words for "
+            f"{raw.numel()} groups at {group_words} words per group"
+        )
+    weight_words.view(*raw.shape, group_words)[below] = 0
+    raw[below] = 0
+    return count
+
+
 def _enforce_production_environment(*, default_alpha: float | None = None) -> None:
     if os.environ.get("TENSORBRIDGE_NVFP4_ALLOW_SCALE_CLAMP", "0") == "1":
         raise RuntimeError("TensorBridge vLLM accuracy runs forbid NVFP4 scale clamping")
@@ -356,6 +396,17 @@ class TensorBridgeNvfp4LinearMethod(LinearMethodBase):
             layer.weight_scale.detach().contiguous(),
             requires_grad=False,
         )
+        # Applies only to the FPMA path. normal_a8 expands B8 exactly and has no
+        # such floor, so zeroing there would perturb the exact-arithmetic
+        # baseline these arms are compared against.
+        dropped = _zero_groups_below_prefold_floor(layer.weight, layer.weight_scale)
+        if dropped:
+            logger.info(
+                "%s: zeroed %d NVFP4 group(s) with raw E4M3 scale below 0x%02X",
+                self.prefix,
+                dropped,
+                FPMA_PREFOLD_FLOOR,
+            )
         if _uses_analytic_alpha_v1_default():
             validate_analytic_fpma_scale_domain(layer.weight_scale)
         alpha = _fpma_alpha()

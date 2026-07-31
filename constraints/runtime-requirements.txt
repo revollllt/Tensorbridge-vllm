@@ -1,3 +1,14 @@
+# Frozen package set for the TensorBridge vLLM evaluation environment.
+#
+# Two entries from the original `pip freeze` are deliberately absent:
+#
+#   tensorbridge-kernels @ file:///.../tensorbridge_kernels-0.2.0+g43cc2aa3d9a1-...whl
+#   -e file:///.../tensorbridge-vllm
+#
+# Both were absolute paths on the machine that produced this file, so installing
+# from here would fail anywhere else. They are covered by the install steps in
+# eval_simple/README.md: vLLM comes from `uv pip install -e .` in this checkout,
+# and tensorbridge-kernels from the wheel vendored in third_party/.
 absl-py==2.4.0
 accelerate==1.13.0
 aiohappyeyeballs==2.6.2
@@ -200,7 +211,6 @@ tabulate==0.10.0
 tblib==3.2.2
 tcolorpy==0.1.7
 tenacity==9.1.4
-tensorbridge-kernels @ file:///data/user/jzou521/codes/cuda/tensorbridge/dist/tensorbridge_kernels-0.2.0+g43cc2aa3d9a1-py3-none-any.whl
 threadpoolctl==3.6.0
 tiktoken==0.13.0
 tilelang==0.1.9
@@ -220,7 +230,6 @@ urllib3==2.7.0
 uvicorn==0.47.0
 uvloop==0.22.1
 vcs-versioning==1.1.1
--e file:///data/user/jzou521/codes/cuda/tensorbridge-vllm
 watchfiles==1.2.0
 websockets==16.0
 wheel==0.47.0
